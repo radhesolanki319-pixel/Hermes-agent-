@@ -153,6 +153,7 @@ def spawn_background_process(
 
     Never inline-polls ``is_interrupted()``: the spawn detaches and returns
     exit_code 0 immediately, so the stale-interrupt kill cannot occur here.
+    """
     try:
         from hermes_platform.termux_adapter import is_zero_daemon_required
         if is_zero_daemon_required():

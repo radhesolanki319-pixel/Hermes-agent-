@@ -27,10 +27,16 @@ print('====================================')
     exit 0
 fi
 
+if [ -f "$HOME/.hermes/.env" ]; then
+    set -a
+    source "$HOME/.hermes/.env"
+    set +a
+fi
+
 if [ $# -eq 0 ]; then
     # Interactive CLI session
     exec python3 "$SCRIPT_DIR/cli.py"
 else
     # Single-query execution
-    exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
+    exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
 fi
