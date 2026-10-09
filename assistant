@@ -1,0 +1,36 @@
+#!/data/data/com.termux/files/usr/bin/env bash
+# Personal AI Assistant Launcher (Zero-Daemon Mobile & Desktop Architecture)
+
+SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH"
+export ZERO_DAEMON_MODE=1
+export DISABLE_EXTERNAL_TELEMETRY=1
+export HERMES_QUIET=1
+
+if [ "$1" == "--status" ] || [ "$1" == "-s" ]; then
+    python3 -c "
+from hermes_platform.host.facts import os_family, is_android, is_termux
+from hermes_platform.termux_adapter import get_battery_status, get_android_storage
+from persona_config import load_persona
+
+p = load_persona()
+print('=== PERSONAL AI ASSISTANT STATUS ===')
+print(f'Assistant:   {p.assistant_name}')
+print(f'User:        {p.user_name}')
+print(f'Tone:        {p.tone}')
+print(f'Platform:    {os_family()} (Android={is_android()}, Termux={is_termux()})')
+print(f'Storage:     {get_android_storage()}')
+print(f'Battery:     {get_battery_status()}')
+print('Policy:      Strict Zero-Background Process (Enforced)')
+print('====================================')
+"
+    exit 0
+fi
+
+if [ $# -eq 0 ]; then
+    # Interactive CLI session
+    exec python3 "$SCRIPT_DIR/cli.py"
+else
+    # Single-query execution
+    exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
+fi

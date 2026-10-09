@@ -138,6 +138,16 @@ def _foreground_background_guidance(command: str) -> str | None:
     if _looks_like_help_or_version_command(command):
         return None
     unquoted = _strip_quotes(command)
+    try:
+        from hermes_platform.termux_adapter import is_zero_daemon_required
+        if is_zero_daemon_required() and any(hit(unquoted) for hit, _ in _FOREGROUND_GUIDANCE):
+            return (
+                "Blocked on mobile/Termux: Long-lived servers, watcher processes, and backgrounding (&, nohup) "
+                "are forbidden by the Zero-Daemon policy to protect device battery and thermals. "
+                "Execute bounded, synchronous tasks only."
+            )
+    except Exception:
+        pass
     return next((msg for hit, msg in _FOREGROUND_GUIDANCE if hit(unquoted)), None)
 
 

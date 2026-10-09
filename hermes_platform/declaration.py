@@ -36,7 +36,10 @@ class AppSpec:
     per_os: Mapping[str, AppDef] = field(default_factory=dict)
 
     def for_os(self, os_family: str) -> Optional[AppDef]:
-        return self.per_os.get(os_family)
+        res = self.per_os.get(os_family)
+        if res is None and os_family == "android":
+            return self.per_os.get("linux")
+        return res
 
 
 @dataclass(frozen=True)
@@ -72,7 +75,7 @@ class Declaration:
         return self.app.for_os(os_family) if self.app else None
 
 
-_APP_OS_FAMILIES = ("win32", "darwin", "linux")
+_APP_OS_FAMILIES = ("win32", "darwin", "linux", "android")
 _APP_PRESENCE = ("executable", "bundle")
 _APP_VERSION_KINDS = {"pe_resource": "win32", "uninstall_registry": "win32", "plist": "darwin", "none": None}
 _APP_LIVENESS_KINDS = ("server_json", "none")
