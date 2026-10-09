@@ -37,6 +37,10 @@ if [ $# -eq 0 ]; then
     # Interactive CLI session
     exec python3 "$SCRIPT_DIR/cli.py"
 else
+    # Strip optional -q / --query flag if passed
+    if [ "$1" == "-q" ] || [ "$1" == "--query" ]; then
+        shift
+    fi
     # Single-query execution
     exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
 fi
