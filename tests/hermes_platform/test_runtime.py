@@ -42,3 +42,12 @@ def test_termux_detection_remains_separate(monkeypatch) -> None:
 
     assert runtime.is_android()
     assert not runtime.is_termux()
+
+
+def test_is_android_with_android_sys_platform(monkeypatch) -> None:
+    monkeypatch.setattr(runtime.sys, "platform", "android")
+    monkeypatch.delenv("ANDROID_ROOT", raising=False)
+    monkeypatch.delenv("ANDROID_DATA", raising=False)
+
+    assert runtime.is_android()
+

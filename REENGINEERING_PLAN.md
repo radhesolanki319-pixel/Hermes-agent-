@@ -29,7 +29,13 @@ Re-engineer Hermes Agent into an independent personal assistant for Android, Lin
 - **Phase 5 — Hardening and release:** permission model, secrets handling, observability, packaging, documentation, and platform test matrix.
 
 ## Current verified status
-The target repository initially contains only a minimal README. No Hermes Agent source tree is available here yet, so source-level audit, duplicate detection, code changes, and test execution cannot honestly begin until the upstream source is present.
+- Phase 0 complete: Upstream source tree imported from `hermes-agent-main.zip` (verified upstream commit `cf23a1a5cc3e02b2a2d4526b4a1ac66ffaac614b`).
+- 100% file parity verified: 17,980 upstream files tracked in git with 0 missing files and 0 byte mismatches.
+- Android & Termux platform abstraction implemented (`is_android()`, `is_termux()`, `hermes_platform.termux_adapter`).
+- Platform test suite (`tests/hermes_platform/test_runtime.py`) verified: 6/6 tests passing.
+- Strict Zero-Daemon mobile guard active in `tools/terminal_tool_guards.py` and `tools/terminal_tool_background.py`.
+- Custom persona engine (`persona_config.py`, updated `SOUL.md`) with Hinglish/English support and on-demand cloud voice configured.
 
-## Immediate blocker
-Import the complete source from the intended upstream Hermes Agent repository, preserving history and license files where possible. Then record the exact upstream commit before any re-engineering changes.
+## Active Phase
+- Advancing through Phase 1 (Audit & Architecture documentation) and Phase 2/3 (Zero-Daemon Stabilization & Platform Adapters).
+- Preserving upstream functionality while enabling on-demand personal assistant execution.

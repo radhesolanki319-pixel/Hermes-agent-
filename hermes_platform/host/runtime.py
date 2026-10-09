@@ -12,6 +12,8 @@ def is_android() -> bool:
     Detect Android userspace markers without launching subprocesses. Termux is Android,
     but is_termux remains separate for Termux-specific paths and behavior.
     """
+    if sys.platform == "android":
+        return True
     if sys.platform != "linux":
         return False
     return bool(os.getenv("ANDROID_ROOT") or os.getenv("ANDROID_DATA"))
