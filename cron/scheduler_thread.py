@@ -41,6 +41,11 @@ class SupervisedTickerThread:
         return threading.Thread(target=self._run, daemon=True, name=self._name)
 
     def start(self) -> None:
+        import os
+        from hermes_platform.host.facts import is_android
+        if is_android() or os.environ.get("ZERO_DAEMON_MODE") == "1":
+            logger.info("Zero-daemon policy active: background cron ticker suppressed on mobile.")
+            return
         self._thread.start()
 
     def is_alive(self) -> bool:

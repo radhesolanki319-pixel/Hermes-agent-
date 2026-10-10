@@ -664,9 +664,8 @@ def _run_full_setup(config: dict, hermes_home, *, is_existing: bool, migration_r
 
 # First-time mode picker: (menu label, setup_quick runner name) — None falls through to Full Setup.
 _FIRST_TIME_MODES = (
-    ("Quick Setup (Nous Portal) — free OAuth login, no API keys, model + tools (recommended)",
-     "_run_first_time_quick_setup"),
-    ("Full setup — configure every provider, tool & option yourself (bring your own keys)", None),
+    ("Standard Setup — configure your model provider (Gemini 3 series, FreeLLM, OpenRouter, etc.) (recommended)", None),
+    ("Quick Setup (Nous Portal) — OAuth login via Nous Portal", "_run_first_time_quick_setup"),
     ("Blank Slate — everything off except the bare minimum; opt in to each capability", "_run_blank_slate_setup"),
 )
 

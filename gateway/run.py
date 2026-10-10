@@ -5752,6 +5752,12 @@ async def start_gateway(config: Optional[GatewayConfig] = None, replace: bool = 
     """Start the gateway and run until interrupted; False if it failed to start (non-zero exit so
     systemd can auto-restart). ``replace`` kills any existing instance first (avoids restart-loop
     deadlocks); ``force`` starts without consulting the host owner at all."""
+    from hermes_platform.host.facts import is_android
+    if is_android() or os.environ.get("ZERO_DAEMON_MODE") == "1":
+        logger.warning("Zero-daemon policy active: persistent background gateway server is disabled on mobile.")
+        print("Zero-daemon policy active: persistent background gateway server is disabled on mobile to prevent battery drain and overheating.")
+        return False
+
     # Set here (not at import) so incidental gateway.run imports from CLI code don't poison it.
     os.environ["HERMES_EXEC_ASK"] = "1"
 
