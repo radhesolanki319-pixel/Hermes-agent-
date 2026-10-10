@@ -29,13 +29,9 @@ Re-engineer Hermes Agent into an independent personal assistant for Android, Lin
 - **Phase 5 — Hardening and release:** permission model, secrets handling, observability, packaging, documentation, and platform test matrix.
 
 ## Current verified status
-- Phase 0 complete: Upstream source tree imported from `hermes-agent-main.zip` (verified upstream commit `cf23a1a5cc3e02b2a2d4526b4a1ac66ffaac614b`).
-- 100% file parity verified: 17,980 upstream files tracked in git with 0 missing files and 0 byte mismatches.
-- Android & Termux platform abstraction implemented (`is_android()`, `is_termux()`, `hermes_platform.termux_adapter`).
-- Platform test suite (`tests/hermes_platform/test_runtime.py`) verified: 6/6 tests passing.
-- Strict Zero-Daemon mobile guard active in `tools/terminal_tool_guards.py` and `tools/terminal_tool_background.py`.
-- Custom persona engine (`persona_config.py`, updated `SOUL.md`) with Hinglish/English support and on-demand cloud voice configured.
-
-## Active Phase
-- Advancing through Phase 1 (Audit & Architecture documentation) and Phase 2/3 (Zero-Daemon Stabilization & Platform Adapters).
-- Preserving upstream functionality while enabling on-demand personal assistant execution.
+- **Phase 0 (Source intake and baseline):** Upstream source tree imported from `hermes-agent-main.zip` (verified upstream commit `cf23a1a5cc3e02b2a2d4526b4a1ac66ffaac614b`). 100% file parity verified: 17,980 upstream files tracked in git with 0 missing files and 0 byte mismatches.
+- **Phase 1 (Audit & Platform Abstraction):** Android and Termux platform facts implemented (`is_android()`, `is_termux()`, `hermes_platform.termux_adapter`). Fully decoupled from mandatory Nous Portal subscriptions.
+- **Phase 2 (Core stabilization & Zero-Daemon Guard):** Strict Zero-Daemon mobile guard active in `tools/terminal_tool_guards.py`, `tools/terminal_tool_background.py`, `gateway/run.py`, and `cron/scheduler_thread.py`. All persistent background servers suppressed on Android/Termux.
+- **Phase 3 (Modular Persona & Gemini 3 Enforcement):** Pure Hermes persona active (`persona_config.py`, `~/.hermes/persona.yaml`, `SOUL.md`). Strict Gemini 3-series enforcement in `agent/agent_init.py` (legacy 1.x/2.x automatically upgraded to `gemini-3.8-flash`).
+- **Phase 4 (Android Native Hardware Tools):** Implemented and registered `android_torch`, `android_battery`, `android_clipboard`, `android_vibrate`, `android_camera`, and `android_media` in `tools/android_tools.py` and `toolsets.py`.
+- **Phase 5 (Hardening & Master Release):** Unified CLI launchers `hermes` and `assistant` installed in `~/.local/bin/`. Full regression test suite passing (35/35 unit tests passed). Live end-to-end tool execution verified on real Android hardware.
