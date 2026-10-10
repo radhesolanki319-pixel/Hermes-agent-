@@ -48,10 +48,10 @@ case "$1" in
         ;;
     -q|--query)
         shift
-        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
         ;;
     *)
         # Free-text user query directly dispatched to the autonomous agent runner
-        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
         ;;
 esac
