@@ -229,7 +229,7 @@ def android_vibrate_tool(duration_ms: int = 500) -> str:
 
 CAMERA_SCHEMA = {
     "name": "android_camera",
-    "description": "Capture a photo snapshot using the phone camera (back or front). Returns image path.",
+    "description": "Capture a photo snapshot using the phone camera (back or front). Returns image path, which can then be passed to vision_analyze to see/inspect what the camera captured.",
     "parameters": {
         "type": "object",
         "properties": {

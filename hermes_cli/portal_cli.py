@@ -60,9 +60,9 @@ def _cmd_status(args) -> int:
         if auth.get("inference_base_url"):
             print(f"  API:     {auth['inference_base_url']}")
     else:
-        print(f"  Auth:    {color('not logged in', Colors.YELLOW)}")
-        print(f"  Sign up: {SUBSCRIPTION_URL}")
-        print("  Login:   hermes portal")
+        print(f"  Auth:    {color('Self-Hosted / Direct API Mode', Colors.GREEN)}")
+        print("  Status:  Running independently with direct provider credentials.")
+        print(f"  Optional:{color(' Nous Portal available via `hermes portal login`', Colors.DIM)}")
 
     # Provider selection (independent of auth)
     model_cfg = config.get("model") if isinstance(config.get("model"), dict) else {}

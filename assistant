@@ -36,11 +36,22 @@ fi
 if [ $# -eq 0 ]; then
     # Interactive CLI session
     exec python3 "$SCRIPT_DIR/cli.py"
-else
-    # Strip optional -q / --query flag if passed
-    if [ "$1" == "-q" ] || [ "$1" == "--query" ]; then
-        shift
-    fi
-    # Single-query execution
-    exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
 fi
+
+# Check if the first argument is a standard CLI subcommand or flag
+case "$1" in
+    worktree|serve|pause|checkpoints|learning|import|mcp|profile|migrate|status|gui|import-agent|monitoring|debug|send|sessions|backup|computer-use|pets|auth|codex-runtime|memory-graph|tools|doctor|resume|hooks|skills|fallback|project|browser|login|journey|curator|skin|console|model|verify|uninstall|moa|completion|lsp|whatsapp-cloud|dump|vault|portal|claw|slack|logout|plugins|prompt-size|security|egress|dashboard|logs|gateway|chat|peer|help|secrets|bundles|webhook|cron|desktop|proxy|approvals|memory|setup|usage|acp|update|config|pairing|whatsapp|kanban|insights|version)
+        exec python3 -m hermes_cli.main "$@"
+        ;;
+    -h|--help|-v|--version|--config|-p|--profile)
+        exec python3 -m hermes_cli.main "$@"
+        ;;
+    -q|--query)
+        shift
+        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        ;;
+    *)
+        # Free-text user query directly dispatched to the autonomous agent runner
+        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        ;;
+esac
