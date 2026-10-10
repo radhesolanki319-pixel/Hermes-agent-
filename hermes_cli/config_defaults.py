@@ -1107,7 +1107,7 @@ DEFAULT_CONFIG = {
             "pcm_sample_rate": 24000,
         },
         "gemini": {
-            "model": "gemini-2.5-flash-preview-tts",
+            "model": "gemini-3.1-flash-tts-preview",
             "voice": "Kore",
             # Gemini 3.1: aux-model rewrite inserts [audio tags] into the TTS script only.
             "audio_tags": False,

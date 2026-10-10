@@ -243,6 +243,8 @@ def upload_session_trace(
     """CLI/gateway entry point: load, convert, upload to ``{user}/hermes-traces``. Status string, never raises."""
     if not session_id:
         return "No active session to upload."
+    if os.environ.get("DISABLE_EXTERNAL_TELEMETRY", "1") == "1":
+        return "Trace upload disabled: all external telemetry and trace syncing are turned off for privacy."
     token = token or _resolve_hf_token()
     if not token:
         return _NO_TOKEN_MESSAGE

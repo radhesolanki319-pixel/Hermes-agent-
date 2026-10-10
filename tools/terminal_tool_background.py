@@ -154,6 +154,22 @@ def spawn_background_process(
     Never inline-polls ``is_interrupted()``: the spawn detaches and returns
     exit_code 0 immediately, so the stale-interrupt kill cannot occur here.
     """
+    try:
+        from hermes_platform.termux_adapter import is_zero_daemon_required
+        if is_zero_daemon_required():
+            return json.dumps({
+                "output": "",
+                "exit_code": 1,
+                "error": (
+                    "Blocked on mobile/Termux: Background process execution is disabled by the "
+                    "Zero-Daemon policy to protect device battery and thermals. "
+                    "Run your command synchronously (without background=true)."
+                ),
+                "status": "error",
+            }, ensure_ascii=False)
+    except Exception:
+        pass
+
     from tools.process_registry import process_registry
     from tools.terminal_tool import (
         _redact_terminal_error_text, _resolve_command_cwd, _resolve_notification_flag_conflict,

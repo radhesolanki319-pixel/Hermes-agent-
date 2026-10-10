@@ -1,8 +1,22 @@
-"""Cached runtime-environment predicates for WSL, containers, and Termux."""
+"""Cached runtime-environment predicates for Android, WSL, containers, and Termux."""
 
 from __future__ import annotations
 
 import os
+import sys
+
+
+def is_android() -> bool:
+    """Return whether this Python process runs on Android.
+
+    Detect Android userspace markers without launching subprocesses. Termux is Android,
+    but is_termux remains separate for Termux-specific paths and behavior.
+    """
+    if sys.platform == "android":
+        return True
+    if sys.platform != "linux":
+        return False
+    return bool(os.getenv("ANDROID_ROOT") or os.getenv("ANDROID_DATA"))
 
 
 def is_termux() -> bool:

@@ -25,8 +25,9 @@ from tools.xai_http import hermes_xai_user_agent
 
 logger = logging.getLogger("tools.tts_tool")
 
-DEFAULT_EDGE_VOICE = "en-US-AriaNeural"
-DEFAULT_ELEVENLABS_VOICE_ID = "pNInz6obpgDQGcFmaJgB"  # Adam
+DEFAULT_EDGE_VOICE = "en-US-JennyNeural"  # Natural female voice
+DEFAULT_EDGE_VOICE_HINDI = "hi-IN-SwaraNeural"  # Natural female voice for Hindi/Hinglish
+DEFAULT_ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"  # Sarah (natural female voice)
 DEFAULT_ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
 DEFAULT_ELEVENLABS_STREAMING_MODEL_ID = "eleven_flash_v2_5"
 DEFAULT_MINIMAX_MODEL = "speech-02-hd"
@@ -49,7 +50,7 @@ DEFAULT_XAI_SPEED_MAX = 1.5
 DEFAULT_XAI_SPEED_DEFAULT = 1.0
 DEFAULT_XAI_OPTIMIZE_STREAMING_LATENCY_DEFAULT = 0
 DEFAULT_XAI_TEXT_NORMALIZATION_DEFAULT = False
-DEFAULT_GEMINI_TTS_MODEL = "gemini-2.5-flash-preview-tts"
+DEFAULT_GEMINI_TTS_MODEL = "gemini-3.1-flash-tts-preview"
 DEFAULT_GEMINI_TTS_VOICE = "Kore"
 DEFAULT_GEMINI_TTS_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 DEFAULT_GEMINI_AUDIO_TAGS = False
@@ -197,7 +198,13 @@ async def _generate_edge_tts(text: str, output_path: str, tts_config: dict[str, 
     edge_tts = _origin()._import_edge_tts()
     edge_config = tts_config.get("edge") or {}
     speed = float(edge_config.get("speed", tts_config.get("speed", 1.0)))
-    kwargs = {"voice": edge_config.get("voice", DEFAULT_EDGE_VOICE)}
+    chosen_voice = edge_config.get("voice")
+    if not chosen_voice:
+        if any("\u0900" <= ch <= "\u097f" for ch in text):
+            chosen_voice = DEFAULT_EDGE_VOICE_HINDI
+        else:
+            chosen_voice = DEFAULT_EDGE_VOICE
+    kwargs = {"voice": chosen_voice}
     if speed != 1.0:
         kwargs["rate"] = f"{round((speed - 1.0) * 100):+d}%"
     await edge_tts.Communicate(text, **kwargs).save(output_path)

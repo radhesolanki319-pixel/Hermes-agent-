@@ -1,0 +1,57 @@
+#!/data/data/com.termux/files/usr/bin/env bash
+# Personal AI Assistant Launcher (Zero-Daemon Mobile & Desktop Architecture)
+
+SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH"
+export ZERO_DAEMON_MODE=1
+export DISABLE_EXTERNAL_TELEMETRY=1
+export HERMES_QUIET=1
+
+if [ "$1" == "--status" ] || [ "$1" == "-s" ]; then
+    python3 -c "
+from hermes_platform.host.facts import os_family, is_android, is_termux
+from hermes_platform.termux_adapter import get_battery_status, get_android_storage
+from persona_config import load_persona
+
+p = load_persona()
+print('=== PERSONAL AI ASSISTANT STATUS ===')
+print(f'Assistant:   {p.assistant_name}')
+print(f'User:        {p.user_name}')
+print(f'Tone:        {p.tone}')
+print(f'Platform:    {os_family()} (Android={is_android()}, Termux={is_termux()})')
+print(f'Storage:     {get_android_storage()}')
+print(f'Battery:     {get_battery_status()}')
+print('Policy:      Strict Zero-Background Process (Enforced)')
+print('====================================')
+"
+    exit 0
+fi
+
+if [ -f "$HOME/.hermes/.env" ]; then
+    set -a
+    source "$HOME/.hermes/.env"
+    set +a
+fi
+
+if [ $# -eq 0 ]; then
+    # Interactive CLI session
+    exec python3 "$SCRIPT_DIR/cli.py"
+fi
+
+# Check if the first argument is a standard CLI subcommand or flag
+case "$1" in
+    worktree|serve|pause|checkpoints|learning|import|mcp|profile|migrate|status|gui|import-agent|monitoring|debug|send|sessions|backup|computer-use|pets|auth|codex-runtime|memory-graph|tools|doctor|resume|hooks|skills|fallback|project|browser|login|journey|curator|skin|console|model|verify|uninstall|moa|completion|lsp|whatsapp-cloud|dump|vault|portal|claw|slack|logout|plugins|prompt-size|security|egress|dashboard|logs|gateway|chat|peer|help|secrets|bundles|webhook|cron|desktop|proxy|approvals|memory|setup|usage|acp|update|config|pairing|whatsapp|kanban|insights|version)
+        exec python3 -m hermes_cli.main "$@"
+        ;;
+    -h|--help|-v|--version|--config|-p|--profile)
+        exec python3 -m hermes_cli.main "$@"
+        ;;
+    -q|--query)
+        shift
+        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        ;;
+    *)
+        # Free-text user query directly dispatched to the autonomous agent runner
+        exec python3 "$SCRIPT_DIR/run_agent.py" --model "gemini-3.8-flash" --base-url "https://generativelanguage.googleapis.com/v1beta" --api-key "${GEMINI_API_KEY:-$GOOGLE_API_KEY}" --query "$*"
+        ;;
+esac

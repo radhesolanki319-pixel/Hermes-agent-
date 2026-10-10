@@ -2401,6 +2401,17 @@ def init_agent(
     _params = locals()
     for _name in _PASSTHROUGH_PARAMS:
         setattr(agent, _name, _params[_name])
+    # Enforce Gemini 3-series policy: strictly prohibit deprecated Gemini 1.x and 2.x models
+    if agent.model and ("gemini-2" in agent.model.lower() or "gemini-1" in agent.model.lower()):
+        upgraded = "gemini-3-pro-preview" if "pro" in agent.model.lower() else "gemini-3.8-flash"
+        if "/" in agent.model:
+            prefix = agent.model.rsplit("/", 1)[0]
+            upgraded = f"{prefix}/{upgraded}"
+        logger.warning(
+            "Gemini 2-series is blocked by user policy. Upgrading %s to Gemini 3 series: %s",
+            agent.model, upgraded
+        )
+        agent.model = upgraded
     for _name in _GATEWAY_IDENTITY_PARAMS:
         setattr(agent, f"_{_name}", _params[_name])
     agent.session_cwd = cwd or None

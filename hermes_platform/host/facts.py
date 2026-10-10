@@ -23,9 +23,26 @@ def normalize_arch(raw: str | None) -> str:
     return _ARCH_NAMES.get((raw or "").strip().lower(), "unknown")
 
 
+def is_android() -> bool:
+    """Return True if running inside Android / Termux environment."""
+    return (
+        sys.platform == "android"
+        or "TERMUX_VERSION" in os.environ
+        or "/data/data/com.termux" in os.environ.get("PREFIX", "")
+        or os.path.exists("/system/build.prop")
+    )
+
+
+def is_termux() -> bool:
+    """Return True if running directly within Termux userland."""
+    return "TERMUX_VERSION" in os.environ or "/data/data/com.termux" in os.environ.get("PREFIX", "")
+
+
 @functools.cache
 def os_family() -> str:
-    """Return the current platform identifier."""
+    """Return the current platform identifier ('android', 'linux', 'darwin', 'win32')."""
+    if is_android():
+        return "android"
     return sys.platform
 
 
