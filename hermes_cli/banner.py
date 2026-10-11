@@ -70,12 +70,15 @@ def _skin_color(key: str, fallback: str) -> str:
 from hermes_cli import __release_date__ as RELEASE_DATE
 from hermes_cli.version_info import get_version_info
 
-HERMES_AGENT_LOGO = """[bold #FFD700]██╗  ██╗███████╗██████╗ ███╗   ███╗███████╗███████╗       █████╗  ██████╗ ███████╗███╗   ██╗████████╗[/]
-[bold #FFD700]██║  ██║██╔════╝██╔══██╗████╗ ████║██╔════╝██╔════╝      ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝[/]
-[#FFBF00]███████║█████╗  ██████╔╝██╔████╔██║█████╗  ███████╗█████╗███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║[/]
-[#FFBF00]██╔══██║██╔══╝  ██╔══██╗██║╚██╔╝██║██╔══╝  ╚════██║╚════╝██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║[/]
-[#CD7F32]██║  ██║███████╗██║  ██║██║ ╚═╝ ██║███████╗███████║      ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║[/]
-[#CD7F32]╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝      ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝[/]"""
+JARVIS_AGENT_LOGO = """[bold #00E5FF]     ██╗ █████╗ ██████╗ ██╗   ██╗██╗███████╗[/]
+[bold #00E5FF]     ██║██╔══██╗██╔══██╗██║   ██║██║██╔════╝[/]
+[#00B0FF]     ██║███████║██████╔╝██║   ██║██║███████╗[/]
+[#00B0FF]██   ██║██╔══██║██╔══██╗╚██╗ ██╔╝██║╚════██║[/]
+[#0091EA]╚█████╔╝██║  ██║██║  ██║ ╚████╔╝ ██║███████║[/]
+[#0091EA] ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝[/]"""
+
+HERMES_AGENT_LOGO = JARVIS_AGENT_LOGO
+
 
 HERMES_CADUCEUS = """[#CD7F32]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⣀⣀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[/]
 [#CD7F32]⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣇⠸⣿⣿⠇⣸⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀[/]
@@ -223,7 +226,12 @@ def format_banner_version_label() -> str:
             return f"{label} · installer"
         return label
 
-    base = f"Hermes Agent v{get_version_info().derived_version} ({RELEASE_DATE})"
+    try:
+        from persona_config import load_persona
+        _p = load_persona()
+        base = f"{_p.assistant_name} Autonomous Agent v{get_version_info().derived_version} (Commander: {_p.user_name})"
+    except Exception:
+        base = f"JARVIS Autonomous Agent v{get_version_info().derived_version} (Commander: Boss)"
     from hermes_cli.config import load_config
     from hermes_cli.update_channel import resolve_update_channel
 

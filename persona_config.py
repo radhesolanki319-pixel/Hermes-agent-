@@ -17,9 +17,9 @@ from hermes_constants import get_hermes_home
 
 @dataclass
 class PersonaConfig:
-    assistant_name: str = "Hermes"
+    assistant_name: str = "JARVIS"
     user_name: str = "Boss"
-    tone: str = "sharp, loyal pair-programmer & autonomous assistant, direct and highly competent"
+    tone: str = "witty, sharp, loyal, highly competent autonomous personal AI assistant, direct and proactive"
     language_mode: str = "hinglish_natural"  # 'hinglish_natural', 'english', 'hindi'
     system_brief: str = (
         "Be direct, sharp, and natural. Match the length of your reply to the weight of the ask. "
@@ -55,7 +55,7 @@ def load_persona(force_reload: bool = False) -> PersonaConfig:
         return _CACHED_PERSONA
 
     config_path = get_hermes_home() / "persona.yaml"
-    name = os.environ.get("ASSISTANT_NAME", "Hermes")
+    name = os.environ.get("ASSISTANT_NAME", "JARVIS")
     user = os.environ.get("ASSISTANT_USER", "Boss")
     tone = os.environ.get("ASSISTANT_TONE", "sharp, loyal pair-programmer & autonomous assistant")
     lang_mode = os.environ.get("ASSISTANT_LANGUAGE", "hinglish_natural")

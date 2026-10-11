@@ -37,7 +37,7 @@ _HERMES_CORE_TOOLS = [
     # Service-gated connector account status and authorization links.
     "manage_connections",
     # Android & Termux native hardware & automation tools
-    "android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media",
+    "android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media", "android_display",
 ]
 
 # Webhook payloads are untrusted third-party content: no file/system execution.
@@ -128,8 +128,8 @@ TOOLSETS = {
     ),
     "tts": _ts("Text-to-speech: convert text to audio with Edge TTS (free), ElevenLabs, OpenAI, or xAI", ["text_to_speech"]),
     "android": _ts(
-        "Android and Termux hardware & automation tools (torch, battery, clipboard, vibrate, camera, media)",
-        ["android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media"],
+        "Android and Termux hardware & automation tools (torch, battery, clipboard, vibrate, camera, media, display)",
+        ["android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media", "android_display"],
     ),
     "todo": _ts("Task planning and tracking for multi-step work", ["todo_list"]),
     "memory": _ts("Persistent memory across sessions (personal notes + user profile)", ["memory"]),

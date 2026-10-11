@@ -21,6 +21,7 @@ def test_android_tools_registered():
         "android_vibrate",
         "android_camera",
         "android_media",
+        "android_display",
     ):
         assert tool_name in tools, f"Tool {tool_name} should be in registry"
         reg = tools[tool_name]
@@ -125,3 +126,16 @@ def test_android_media_actions(monkeypatch):
     res_yt = json.loads(android_media_tool("open_youtube", "kesariya song"))
     assert res_yt.get("success") is True
     assert "youtube.com" in res_yt.get("url", "")
+
+
+def test_android_display_tool(monkeypatch):
+    """Display tool handles comfort, cinema, and status modes."""
+    monkeypatch.setattr("os.path.exists", lambda path: True)
+    monkeypatch.setattr("tools.android_tools._run_cmd", lambda cmd, timeout=10.0: (0, "DISPLAY OK", ""))
+
+    from tools.android_tools import android_display_tool
+    res = json.loads(android_display_tool(mode="comfort", dim_level=50))
+    assert res.get("success") is True
+    assert res.get("mode") == "comfort"
+    assert "DISPLAY OK" in res.get("output", "")
+

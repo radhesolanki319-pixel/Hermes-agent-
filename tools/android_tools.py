@@ -432,3 +432,53 @@ registry.register(
     check_fn=_check_android_available,
     emoji="🎵",
 )
+
+
+DISPLAY_SCHEMA = {
+    "name": "android_display",
+    "description": "Control phone AMOLED display calibration, Eye Protection, Extra Dim, and 4K Cinema saturation boost.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "mode": {
+                "type": "string",
+                "enum": ["comfort", "cinema", "normal", "status"],
+                "description": "Display mode: 'comfort' (Eye Protection + Extra Dim), 'cinema' (Pure 4K DCI-P3 Vibrant), 'normal' (Factory default), 'status' (Current calibration).",
+            },
+            "dim_level": {
+                "type": "integer",
+                "description": "Extra dim intensity level (1-100, default 40). Applicable in comfort mode.",
+            },
+        },
+        "required": ["mode"],
+    },
+}
+
+
+def android_display_tool(mode: str, dim_level: Optional[int] = None) -> str:
+    script = "/data/data/com.termux/files/usr/bin/screen-boost"
+    if not os.path.exists(script):
+        return json.dumps({"error": "screen-boost utility not found"})
+    cmd = [script, mode]
+    if dim_level is not None:
+        cmd.append(str(dim_level))
+    code, stdout, stderr = _run_cmd(cmd)
+    return json.dumps({
+        "success": code == 0,
+        "mode": mode,
+        "output": stdout or stderr,
+    })
+
+
+registry.register(
+    name="android_display",
+    toolset="android",
+    schema=DISPLAY_SCHEMA,
+    handler=lambda args, **kw: android_display_tool(
+        mode=args.get("mode", "status"),
+        dim_level=args.get("dim_level"),
+    ),
+    check_fn=_check_android_available,
+    emoji="🖥️",
+)
+

@@ -14,9 +14,9 @@ from hermes_platform.termux_adapter import get_battery_status, get_android_stora
 from persona_config import load_persona
 
 p = load_persona()
-print('=== PERSONAL AI ASSISTANT STATUS ===')
-print(f'Assistant:   {p.assistant_name}')
-print(f'User:        {p.user_name}')
+print('=== JARVIS AUTONOMOUS SYSTEM STATUS ===')
+print(f'System:      {p.assistant_name} Core (Online & Armed)')
+print(f'Commander:   {p.user_name}')
 print(f'Tone:        {p.tone}')
 print(f'Platform:    {os_family()} (Android={is_android()}, Termux={is_termux()})')
 print(f'Storage:     {get_android_storage()}')
