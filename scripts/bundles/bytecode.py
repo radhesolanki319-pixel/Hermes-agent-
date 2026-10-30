@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bake the payload's bytecode cache at staging time.
 
 A sealed payload ships no __pycache__: the runtime redirects bytecode

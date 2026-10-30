@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Offline Codex JSON-RPC peer; no provider or authentication calls."""
 import json

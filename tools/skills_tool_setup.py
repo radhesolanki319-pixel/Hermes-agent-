@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skill readiness: required env vars, secret capture, and setup notes. Split out of
 ``tools.skills_tool`` (names re-imported there); module state (``_secret_capture_callback``,
 ``load_env``) stays there and is read lazily at call time so origin-module patches are honored."""

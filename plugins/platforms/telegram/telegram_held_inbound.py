@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Telegram held-inbound queue: events PTB already acked that cannot dispatch yet are held,
 redispatched on reconnect, and handed to the adapter that replaces this one (#132829)."""
 

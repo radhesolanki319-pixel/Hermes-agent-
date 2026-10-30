@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Cron dashboard routes.
 
 The ``*_sync`` workers, profile resolution and the threadpool wrapper

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub ClawHub adapter (clawhub.ai HTTP API)."""
 
 import hashlib

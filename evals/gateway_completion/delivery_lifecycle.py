@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os, sys, asyncio, json, tempfile, types
 from pathlib import Path
 

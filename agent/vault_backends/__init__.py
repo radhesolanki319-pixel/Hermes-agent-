@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Login backends for the browser credential vault.
 
 The local Fernet store (``agent/vault_store.py``) is one backend; 1Password

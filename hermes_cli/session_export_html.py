@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Standalone single-file HTML export (single or multi-session with sidebar); no remote deps."""
 
 import datetime

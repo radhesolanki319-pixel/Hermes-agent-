@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Delivery routing for cron job outputs and agent responses, by target: explicit ("telegram:123456789"),
 platform home channel ("telegram"), origin (back to where the job was created), or local (files)."""
 

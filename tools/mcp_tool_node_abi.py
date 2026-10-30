@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Stdio MCP servers whose native addon was built for a different Node.js (#124264).
 
 Hermes runs every stdio MCP server on its own managed Node, never the user's. A server whose

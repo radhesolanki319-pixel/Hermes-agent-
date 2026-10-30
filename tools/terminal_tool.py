@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Terminal tool: run shell commands in the configured backend.
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub official sources: repo-shipped optional skills and the centralized Hermes index."""
 
 import logging

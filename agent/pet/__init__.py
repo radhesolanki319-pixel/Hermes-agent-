@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Petdex pet engine — shared core for the CLI, TUI, and desktop surfaces.
 
 Petdex (https://github.com/crafter-station/petdex) is a public gallery of

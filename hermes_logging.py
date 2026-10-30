@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Centralized logging setup for Hermes Agent.
 
 Log files: agent.log (INFO+, everything), errors.log (WARNING+), gateway.log (INFO+,

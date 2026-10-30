@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Strip ANSI escape sequences from subprocess output so they never reach the
 model's context (models otherwise copy them into file writes). Covers full
 ECMA-48: CSI, OSC (BEL/ST), DCS/SOS/PM/APC, nF, Fp/Fe/Fs and 8-bit C1 controls."""

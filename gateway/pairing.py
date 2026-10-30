@@ -1,3 +1,4 @@
+from __future__ import annotations
 """DM pairing: code-based approval of new users on messaging platforms.
 
 Unknown users receive a one-time pairing code that the bot owner approves via the

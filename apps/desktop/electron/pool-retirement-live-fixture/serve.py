@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real serve entry with observable, bounded shutdown and real no-agent cron work.
 
 Only lifecycle pacing is fixture-owned. HTTP routes, admission, scheduler dispatch,

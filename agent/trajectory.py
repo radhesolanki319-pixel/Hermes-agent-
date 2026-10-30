@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Trajectory saving + scratchpad helpers (``_convert_to_trajectory_format`` stays an AIAgent method — batch_runner.py calls it)."""
 
 import json

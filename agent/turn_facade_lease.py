@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Durable cross-process session turn lease for ``TurnFacadeMixin.run_conversation``.
 
 One process at a time may load -> run -> flush a session shared through state.db (Desktop, CLI

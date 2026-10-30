@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Connector tool-gateway package: typed client-side plumbing for remote tools.
 
 This package owns everything hermes-agent needs to talk to the managed tool

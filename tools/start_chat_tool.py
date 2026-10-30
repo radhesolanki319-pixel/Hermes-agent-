@@ -1,3 +1,4 @@
+from __future__ import annotations
 from tools.registry import registry
 
 START_CHAT_SCHEMA = {

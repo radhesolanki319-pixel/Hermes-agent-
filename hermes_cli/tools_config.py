@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Unified tool configuration for Hermes Agent."""
 
 import json as _json

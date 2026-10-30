@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway restart/drain, Hermes update and background-action status dashboard routes.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

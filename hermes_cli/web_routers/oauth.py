@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OAuth provider dashboard routes: catalog/status, disconnect, and in-browser device-code login flows.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

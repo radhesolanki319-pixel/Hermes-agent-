@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 Skills Hub — hub state management and the public facade for the source adapters.

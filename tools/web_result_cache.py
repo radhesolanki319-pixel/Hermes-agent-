@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Result caching for web_search / web_extract; both caches TTL-bounded (default 20 min,
 ``web.cache_ttl_minutes``; disable with ``web.cache_enabled: false``), only successful responses cache.
 * **Search memo** — in-memory, per-process, single-flighted: concurrent identical queries share one

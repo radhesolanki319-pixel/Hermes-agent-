@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Skills Sync -- manifest-based seeding and updating of bundled skills. Copies repo skills/ into
 ~/.hermes/skills/, tracking each synced skill's origin hash in .bundled_manifest (v2 "name:hash"

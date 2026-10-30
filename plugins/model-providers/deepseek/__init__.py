@@ -1,3 +1,4 @@
+from __future__ import annotations
 """DeepSeek provider profile.
 
 V4 defaults to thinking ON when ``extra_body.thinking`` is unset, and then

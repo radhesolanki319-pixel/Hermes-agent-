@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Turn-liveness activity tracking for ``AIAgent`` (gateway watchdog + session activity persistence).
 
 ``_touch_activity`` is the single write path; persistence is rate-limited and never raises.

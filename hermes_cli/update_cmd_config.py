@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Post-``hermes update`` config-schema migration for the active profile and every sibling.
 Names are re-imported by ``update_cmd`` (``hermes_cli.update_cmd.<name>`` resolves/monkeypatches);
 origin helpers are imported lazily."""

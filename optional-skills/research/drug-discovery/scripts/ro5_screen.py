@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 ro5_screen.py — Batch Lipinski Ro5 + Veber screening via PubChem API.

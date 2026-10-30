@@ -1,3 +1,4 @@
+from __future__ import annotations
 """macOS ``open`` frontmost raise-ladder for the terminal tool.
 
 Split out of ``tools/terminal_tool.py`` (PR #95286, Jackal991): a pure,

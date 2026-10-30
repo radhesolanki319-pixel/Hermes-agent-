@@ -1,3 +1,4 @@
+from __future__ import annotations
 """User-facing status / warning / notice plumbing for ``AIAgent``.
 
 Safe printing, quiet-mode gating, deduped context-overflow warnings, and the buffered retry

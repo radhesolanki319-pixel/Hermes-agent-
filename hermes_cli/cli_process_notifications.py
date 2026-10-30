@@ -1,3 +1,4 @@
+from __future__ import annotations
 """CLI notification ownership, structured queueing and last-moment consumption."""
 
 

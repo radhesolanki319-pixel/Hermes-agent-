@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Evaluate one PEP 508 marker inside PM's runtime: `_marker_eval.py MARKER ENV_JSON`.
 
 Prints "1" or "0". Callers whose interpreter has no `packaging` (a historical

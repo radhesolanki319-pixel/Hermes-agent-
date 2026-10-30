@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Audio dashboard routes: transcription upload + live transcribe-stream, voice config, ElevenLabs voices, TTS speak/lease and the speak-stream WebSocket.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

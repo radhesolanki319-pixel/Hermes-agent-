@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Tencent TokenHub provider profile (OpenAI-compatible, tokenhub.tencentmaas.com).
 
 Request quirk: top-level ``reasoning_effort``, clamped to TokenHub's low/medium/high and omitted

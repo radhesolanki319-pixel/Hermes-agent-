@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Git dashboard routes — the remote half of the desktop coding rail + review pane.
 
 The desktop runs these as Electron-local git; over a remote gateway that's the wrong

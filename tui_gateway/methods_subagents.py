@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session-scoped roster and bounded live transcript snapshots for shared clients.
 
 Async projection adapted from JoaoMarcos44's PR #70899; controls reuse the

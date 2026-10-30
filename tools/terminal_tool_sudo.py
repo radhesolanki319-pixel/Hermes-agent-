@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Sudo password plumbing and shell-command rewrites for the terminal tool: per-scope
 password cache, /dev/tty prompt, the quote-aware shell scanner behind the real-sudo rewrite
 (``sudo -S -p ''``) and the compound-background brace-group rewrite, and the NOPASSWD probe.

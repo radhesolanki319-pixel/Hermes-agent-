@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Image-generation JSON-RPC handler (ws twin of the image_generate tool) for UI surfaces
 (avatar pickers, artifact panes). The result is a data URL: a remote desktop can't read a
 gateway file path and hosted URLs are often CORS-opaque to a renderer canvas. Bodies are

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Collect real cron completion producer + durable delivery, without inference."""
 import asyncio
 import json

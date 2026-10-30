@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """MCP OAuth 2.1 client support: browser authorization-code flow with PKCE.
 

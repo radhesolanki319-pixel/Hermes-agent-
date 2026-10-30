@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Cron prompt threat scanning: the small user-authored prompt gets the strict pattern set;
 the assembled prompt (with skill bodies) gets only prose-proof directives."""
 

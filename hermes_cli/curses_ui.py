@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Curses checklist / radiolist / single-select menus with keyboard navigation and fuzzy ``/``
 search, plus a numbered text fallback for terminals without curses."""
 import sys

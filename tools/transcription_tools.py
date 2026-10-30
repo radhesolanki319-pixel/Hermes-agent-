@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Speech-to-text transcription used by the gateway for voice messages.
 

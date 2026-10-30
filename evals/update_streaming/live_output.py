@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Disposable subprocess/tee probe; never invokes an actual update.
 
 Run with the checkout's Python. --step drives the native Windows hand-off

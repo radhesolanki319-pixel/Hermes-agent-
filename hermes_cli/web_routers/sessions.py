@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session dashboard routes.
 
 Three routers because global route order matters: ``list_router`` (GET

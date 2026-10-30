@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Backup and import commands for hermes CLI."""
 
 import json

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Small pure helpers shared by the tools.mcp_tool_* modules: SDK 1.x/2.x field access,
 error-text sanitising, numeric/bool coercion, timeouts and jitter. No origin state."""
 

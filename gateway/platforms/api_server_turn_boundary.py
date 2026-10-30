@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Current-turn boundary inside an agent transcript returned to the OpenAI-compat routes.
 
 ``AIAgent.run_conversation`` hands back the FULL transcript (client history + this turn),

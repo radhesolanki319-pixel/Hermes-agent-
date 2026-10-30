@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared SKILL.md preprocessing helpers: ``${HERMES_*}`` template tokens and
 inline ``!`cmd``` shell expansion."""
 

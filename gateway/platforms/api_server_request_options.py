@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Per-request ``model_options`` decoding, lifted from ``platforms/api_server.py``.
 
 Keeps the api_server facade under its frozen line cap (root AGENTS.md god-file

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live localhost Responses adapter video rejection/control probe."""
 
 import os, sys, tempfile, json, threading

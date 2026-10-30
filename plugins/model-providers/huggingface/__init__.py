@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hugging Face provider profile."""
 
 from providers import register_provider

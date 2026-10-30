@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session health for MCPServerTask: dynamic tool refresh on list_changed notifications, server
 log forwarding, keepalive probes, suspect-mark / lazy-verify, in-flight call fail-fast, stdio
 child liveness and stdio idle/lifetime recycling."""

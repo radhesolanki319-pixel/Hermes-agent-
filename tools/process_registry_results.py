@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bounded, profile-local receipts for completed terminal processes.
 
 Receipts are read through process_manage, never replayed as notifications or

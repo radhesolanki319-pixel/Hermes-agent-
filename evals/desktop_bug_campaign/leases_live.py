@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real WS/backend-process lease recovery probe; deterministic HTTP inference.
 
 Run: .venv/bin/python evals/desktop_bug_campaign/leases_live.py --output DIR

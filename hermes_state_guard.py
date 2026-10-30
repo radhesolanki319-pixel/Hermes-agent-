@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live-DB test-isolation guard and the per-process "last init error" record.
 Every SessionDB construction resolves its path through _ensure_test_isolation
 so a pytest-context process (env OR ancestry) can never open a production

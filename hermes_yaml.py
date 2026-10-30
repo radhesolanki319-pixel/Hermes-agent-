@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared YAML 1.1 policy for config, manifests, and frontmatter.
 
 Ruamel's native schema includes bare y/n booleans and rejects duplicate keys.

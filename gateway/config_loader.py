@@ -1,3 +1,4 @@
+from __future__ import annotations
 """config.yaml / gateway.json → ``GatewayConfig.from_dict`` schema (the ``load_gateway_config`` phases).
 
 Precedence for top-level keys: key-presence at the TOP LEVEL of config.yaml wins; the nested

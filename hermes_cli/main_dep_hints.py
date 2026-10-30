@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Repair guidance for an unavailable declared dependency group."""
 
 

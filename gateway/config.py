@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway configuration: connected platforms, home channels, session reset
 policies and delivery preferences, loaded from config.yaml / gateway.json / env.
 """

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Chat-tab WebSocket routes: /api/console, /api/pty, the /api/ws gateway
 sidecar and /api/pub + /api/events broadcast.
 

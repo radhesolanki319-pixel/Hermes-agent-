@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Profiles dashboard routes.
 
 Two routers because route order matters: ``sessions_router`` (/api/profiles/sessions*,

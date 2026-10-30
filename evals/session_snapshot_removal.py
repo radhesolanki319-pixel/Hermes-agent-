@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real config → SQLite persistence → explicit /save A/B, without provider calls.
 
 Run with a clean HOME/HERMES_HOME and PYTHONPATH pointing at the tree under test.

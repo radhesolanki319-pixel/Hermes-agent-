@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103551: remote backend, FIFO, and quadratic-time hazards of the rewrite hint
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

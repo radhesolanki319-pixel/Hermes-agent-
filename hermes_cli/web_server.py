@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hermes Agent — Web UI server: FastAPI app assembly, auth/host middleware, ``start_server``.
 
 Route handlers live in ``web_routers/``; their helpers live in the sibling

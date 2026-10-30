@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Feishu Drive Tools -- document comment operations via Feishu/Lark API.
 
 List / reply-to / add document comments through the generic BaseRequest path (lazy SDK

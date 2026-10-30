@@ -1,3 +1,4 @@
+from __future__ import annotations
 """IRC Platform Adapter for Hermes Agent — stdlib asyncio only, zero external dependencies.
 
 config.yaml ``gateway.platforms.irc.extra`` keys: server, port (6697), nickname (hermes-bot), channel,

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Opt-in interrupt/poll tracing for ``BaseEnvironment._wait_for_process``
 (``HERMES_DEBUG_INTERRUPT=1``): loop entry/exit, interrupt/timeout detection and ~30s
 heartbeats so "agent never sees the interrupt" reports can be diagnosed from agent.log."""

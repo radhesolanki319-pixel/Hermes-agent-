@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Check for an App Installer update for the running MSIX package.
 
 The out-of-store desktop installs are App Installer owned: the OS registered

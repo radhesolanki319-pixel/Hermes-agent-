@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Google Vertex AI provider profile: Gemini via Google Cloud's OpenAI-compatible endpoint.
 
 Auth is OAuth2 (service-account JSON or ADC), not a static key: ``agent/vertex_adapter.py``

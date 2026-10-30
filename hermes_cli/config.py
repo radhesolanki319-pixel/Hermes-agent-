@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Configuration management for Hermes Agent: config.yaml / .env loading, saving,
 validation, migration, and the ``hermes config`` command."""
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Probe-only serve bootstrap: observe real ownership and inject config-read failure.
 
 Not imported by production. The failure seam raises once during model-target

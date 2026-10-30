@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Vision tools: ``vision_analyze`` (image) and ``video_analyze``.
 

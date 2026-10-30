@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local-CDP battery orchestrator: tasks x arms x models x reps.
 
 Resume-safe: completed cells in results.jsonl are skipped, so a killed

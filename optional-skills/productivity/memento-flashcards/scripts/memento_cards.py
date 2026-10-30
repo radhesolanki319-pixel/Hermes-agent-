@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Memento card storage, spaced-repetition engine, and CSV I/O.
 

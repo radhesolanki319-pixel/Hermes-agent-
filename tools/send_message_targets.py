@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Target parsing and resolution for send_message (platform:chat_id[:thread] → ids)."""
 
 import logging

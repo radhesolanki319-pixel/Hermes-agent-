@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Git worktree isolation for ``hermes -w`` sessions: create, classify, prune.
 
 Every git call goes through ``_git``/``_git_out``/``_git_quiet`` (UTF-8 text, captured,

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real SessionStore/SQLite A/B, isolated fresh process; no provider calls."""
 import json
 import os

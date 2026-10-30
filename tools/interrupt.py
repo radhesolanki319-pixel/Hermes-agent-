@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Per-thread interrupt signaling for all tools: thread-scoped so interrupting one
 agent session does not kill tools in other sessions (the gateway runs many agents in one
 process). The agent passes its execution thread id to set_interrupt(); tools call

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Render every slide of a .pptx to per-slide PNG images.
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Which platform env vars the setup surfaces hide.
 
 Hiding is a *presentation* decision only: the vars keep working through ``hermes config set``,

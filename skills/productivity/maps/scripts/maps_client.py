@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 maps_client.py - CLI tool for maps, geocoding, routing, POI search, and more.

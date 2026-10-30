@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Full local execution controls; never sends a request to an inference vendor."""
 import json
 import os

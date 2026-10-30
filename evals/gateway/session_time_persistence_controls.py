@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Isolated production-library controls; no transport/provider calls."""
 import contextlib
 import importlib.util

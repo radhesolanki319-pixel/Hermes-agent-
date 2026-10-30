@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Messaging-platform catalog and onboarding helpers: platform overrides/env discovery, WhatsApp
 and Telegram onboarding state.
 """

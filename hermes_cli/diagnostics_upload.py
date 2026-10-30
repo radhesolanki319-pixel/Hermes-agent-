@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Client for uploading ``hermes debug share`` bundles to Nous-internal S3.
 1. POST {NAS_BASE}/api/diagnostics/upload-url → {uploadUrl, viewUrl, id, ...}; the body carries ``sizeBytes``,
    which NAS signs into the presigned URL's ``ContentLength``, so the PUT must send exactly that many bytes.

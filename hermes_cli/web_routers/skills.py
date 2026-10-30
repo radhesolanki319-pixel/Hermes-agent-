@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills dashboard routes.
 
 Two routers because global route order matters: ``hub_router`` (skills-hub

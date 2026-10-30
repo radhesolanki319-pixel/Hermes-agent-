@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dangerous-command detection: normalization, tokenizing, and pattern tables.
 
 Pure command classification for :mod:`tools.approval` — no approval state, config reads, or

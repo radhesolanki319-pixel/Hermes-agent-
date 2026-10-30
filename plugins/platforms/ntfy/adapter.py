@@ -1,3 +1,4 @@
+from __future__ import annotations
 """ntfy platform adapter: HTTP-streaming subscription (``/json``, ``poll=false``) in, POST out.
 
 config.yaml ``platforms.ntfy.extra``: ``server`` (default https://ntfy.sh), ``topic`` (required),

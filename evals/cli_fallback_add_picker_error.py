@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Drive the real ``hermes fallback add`` under a Linux PTY into an ordinary picker error.
 
 Run from the checkout with the project Python. No provider requests are sent: the picker

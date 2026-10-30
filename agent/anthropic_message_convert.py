@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenAI-style -> Anthropic Messages API request conversion: model-id normalization, tool
 schemas, and the message list (content blocks, thinking blocks and their signatures,
 tool_use/tool_result pairing, cache_control placement, screenshot eviction, blank-block

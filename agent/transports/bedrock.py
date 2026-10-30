@@ -1,3 +1,4 @@
+from __future__ import annotations
 """AWS Bedrock Converse API transport.
 
 Delegates format conversion to agent/bedrock_adapter.py. Bedrock uses its own

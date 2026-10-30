@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Offline prompt A/B and real optional catalog -> skill_view probe.
 Run with the repository venv; tiktoken must be available. No model API calls.
 """

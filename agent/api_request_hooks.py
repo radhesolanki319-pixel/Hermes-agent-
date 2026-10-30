@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lifecycle-hook payloads for ``AIAgent`` API requests.
 
 JSON-safe coercion, secret-key redaction, size caps, and the ``api_request_error`` hook dispatch.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Credential sections of `hermes status`, run through ``status._SECTIONS`` with its shared context.
 Origin helpers (``_row``, ``_first_env_value``, ...) are resolved through the ``hermes_cli.status``
 module object so tests that monkeypatch that module keep working."""

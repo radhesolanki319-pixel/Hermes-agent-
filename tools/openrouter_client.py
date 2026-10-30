@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenRouter API key probe shared by Hermes tools."""
 
 import os

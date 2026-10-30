@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Agent-facing subcommand handlers: memory, acp, tools, insights, monitoring, skills (+trust).
 
 Split out of ``hermes_cli/main.py``. Names that still live in main (``PROJECT_ROOT``, ...)

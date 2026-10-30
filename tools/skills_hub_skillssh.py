@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub skills.sh adapter: catalog discovery via skills.sh, content via GitHub."""
 
 import hashlib

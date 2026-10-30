@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``hermes doctor`` — diagnose (and with --fix, repair) a Hermes install.
 
 ``run_doctor`` walks ``DOCTOR_CHECKS`` in order; each check prints its own rows and returns a ``Finding``.

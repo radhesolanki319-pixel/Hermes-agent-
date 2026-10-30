@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP tool schema conversion and naming: JSON-schema normalisation for provider
 compatibility, mcp__server__tool naming, utility-tool schemas, include/exclude filters and
 description injection scanning."""

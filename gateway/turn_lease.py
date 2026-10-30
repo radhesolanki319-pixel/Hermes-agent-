@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Per-session turn lease — serializes the [load history -> run -> flush] region.
 
 Busy guards are keyed by ROUTING KEY but the transcript is owned by SESSION_ID, and

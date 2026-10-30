@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Abstract base class for pluggable context engines.
 
 A context engine decides when/how conversation context is compacted near the token

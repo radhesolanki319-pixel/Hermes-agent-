@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session ``/yolo``: the one toggle / restore / carry contract every surface calls.
 
 The bypass itself is ``tools.approval``'s in-memory per-key set, so every process starts with it empty.

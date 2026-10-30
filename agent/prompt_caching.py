@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Anthropic prompt caching strategy — pure functions, no AIAgent dependency.
 
 Default layout: 4 cache_control breakpoints — the static system prefix, the end of the

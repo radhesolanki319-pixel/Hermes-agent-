@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Toolset helpers: get/resolve/validate named tool groups (static TOOLSETS + registry-registered)."""
 
 from typing import Dict, List, Any, Set, Optional, Tuple

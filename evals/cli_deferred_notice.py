@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Drive the real CLI with a FIFO update-cache result under a Linux PTY.
 
 Run from the checkout with the project Python. No provider requests are sent.

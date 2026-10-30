@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interactive messaging-platform setup wizards: WhatsApp (bridge + Cloud API), Slack manifest.
 
 Split out of ``hermes_cli/main.py``. Names that still live in main are imported lazily at call time.

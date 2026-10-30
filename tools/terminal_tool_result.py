@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Foreground result post-processing for the terminal tool (cwd dual-write,
 sudo handling, transform hook, truncation, ANSI strip, redaction, exit-code
 notes/hints, spill redaction, verification evidence) + exit-code tables. Lazy

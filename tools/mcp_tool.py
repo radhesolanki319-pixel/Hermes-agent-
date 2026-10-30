@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """MCP (Model Context Protocol) client: connects to the ``mcp_servers`` configured in
 ~/.hermes/config.yaml (stdio, Streamable HTTP or SSE), discovers their tools and registers them

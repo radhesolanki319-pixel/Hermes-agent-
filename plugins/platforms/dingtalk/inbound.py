@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pure parsers for inbound DingTalk ``ChatbotMessage`` payloads (no I/O, no adapter state)."""
 
 import json

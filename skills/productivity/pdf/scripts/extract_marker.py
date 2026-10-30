@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Extract text from documents using marker-pdf. High-quality OCR + layout analysis.
 

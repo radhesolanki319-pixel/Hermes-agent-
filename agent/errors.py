@@ -1,3 +1,4 @@
+from __future__ import annotations
 class EmptyStreamError(RuntimeError):
     """Raised when a provider closes a stream without yielding a response."""
 

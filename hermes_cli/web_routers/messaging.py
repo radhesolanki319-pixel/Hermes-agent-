@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Messaging dashboard routes: WhatsApp/Telegram onboarding and per-platform enable/config/test.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

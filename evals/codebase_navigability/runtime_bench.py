@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Runtime benchmarks for one tree. Usage: python runtime_bench.py <tree> <label> [reps]
 
 Each probe runs in a FRESH subprocess with an isolated HERMES_HOME so nothing is cached across reps.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bot Desktop: per-profile headless Xfce desktop over RFB, viewed from Hermes Desktop.
 
 ``runtime`` owns the Xvnc/Xfce process and the published env; ``lease`` owns who may drive the

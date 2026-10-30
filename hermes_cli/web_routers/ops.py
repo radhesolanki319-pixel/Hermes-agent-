@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pairing, webhooks, gateway lifecycle, credential pool, memory provider and
 operations (doctor/backup/import/hooks/checkpoints) dashboard routes.
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """NovitaAI provider profile."""
 
 from providers import register_provider

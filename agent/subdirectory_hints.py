@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Progressive subdirectory hint discovery: as the agent navigates into
 subdirectories via tool calls, load project context files (AGENTS.md, CLAUDE.md,
 .cursorrules) from them and append to the tool result — context arrives without

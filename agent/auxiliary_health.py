@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Endpoint identity for auxiliary custom-provider health checks."""
 import contextlib
 from typing import Any, Optional

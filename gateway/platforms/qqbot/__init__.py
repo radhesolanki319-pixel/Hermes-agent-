@@ -1,3 +1,4 @@
+from __future__ import annotations
 """QQBot platform package. Re-exports adapter symbols so existing import paths
 (``from gateway.platforms.qqbot import QQAdapter, check_qq_requirements``) keep working.
 Sub-modules: constants, utils, crypto (AES-256-GCM), onboard (QR), chunked_upload, keyboards."""

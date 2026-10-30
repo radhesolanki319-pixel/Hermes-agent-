@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bundled-payload CLI entry wrapper — the distlib launcher's zip overlay.
 
 scripts/build/launchers.py reads this file, substitutes the four

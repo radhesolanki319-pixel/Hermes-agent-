@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interactive setup wizard for Hermes Agent (config lives in ~/.hermes/).
 
 Independently-runnable sections: Model & Provider, Terminal Backend, Agent Settings, Messaging

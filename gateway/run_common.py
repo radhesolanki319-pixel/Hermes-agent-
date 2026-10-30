@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Leaf constants shared by ``gateway/run.py`` and its ``run_*`` mixin modules.
 
 Kept import-cycle free (imports nothing from ``gateway.run``) because these values

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Transport registry for provider response normalization.
     transport = get_transport("anthropic_messages")
     result = transport.normalize_response(raw_response)"""

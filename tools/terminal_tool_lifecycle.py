@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Sandbox lifecycle for the terminal tool: idle reaping, teardown, manual/atexit
 cleanup, and the lazy ensure_task_env bring-up. The env cache dicts and locks
 stay in tools.terminal_tool (tests patch them there) and are read through it

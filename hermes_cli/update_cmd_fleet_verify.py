@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Post-restart fleet verification for ``hermes update`` (``update_cmd_fleet`` sibling).
 
 After the restart phase: compare every live gateway's stamped code against the checkout, reconcile

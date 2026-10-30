@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MiniMax provider profiles (international, China, OAuth).
 
 Default routes use anthropic_messages (base URLs end in /anthropic). Users can

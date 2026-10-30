@@ -1,3 +1,4 @@
+from __future__ import annotations
 """RoomLink dispatch validation and hidden member-session ownership."""
 
 import asyncio

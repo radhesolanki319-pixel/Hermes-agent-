@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Slack platform adapter: slack-bolt Socket Mode (messages, slash commands, threads)."""
 
 import asyncio

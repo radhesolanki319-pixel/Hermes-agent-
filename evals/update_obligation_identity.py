@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Disposable process/state-file A/B: run with the checkout path as argv[1].
 
 No services are discovered or restarted. Both children write runtime status

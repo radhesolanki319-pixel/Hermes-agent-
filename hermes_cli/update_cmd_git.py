@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Git plumbing for ``hermes update``: fork/upstream sync, trampoline-git detection, lockfile/EOL churn cleanup, orphan rescue refs, parked-branch assessment, fetch-failure classification.
 
 Split out of ``update_cmd.py``, which re-imports every name so ``hermes_cli.update_cmd.<name>``

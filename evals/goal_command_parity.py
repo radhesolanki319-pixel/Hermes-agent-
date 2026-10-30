@@ -1,3 +1,4 @@
+from __future__ import annotations
 """CLI /goal semantic oracle, with real storage and no model calls.
 
 Run against base and candidate in fresh processes with distinct temporary homes:

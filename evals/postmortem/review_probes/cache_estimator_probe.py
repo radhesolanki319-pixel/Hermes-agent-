@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103476: preflight estimate vs Anthropic wire size with retained thinking
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Why an auxiliary client could not be built — and the Nous credential failure behind it.
 
 ``_resolve_nous_runtime_api`` must swallow the resolver's ``AuthError`` and return None so the

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Blocking gateway approval wait for :mod:`tools.approval`.
 
 Mirrors the CLI's synchronous ``input()`` flow: the agent thread enqueues a

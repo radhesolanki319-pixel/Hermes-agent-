@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Branch (session.branch / session.branch_whole) helpers (``methods_session`` split).
 
 Moved verbatim from ``tui_gateway/methods_session.py`` (file-line ratchet, #66663 CI repair):

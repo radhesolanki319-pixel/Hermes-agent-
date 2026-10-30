@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenAI Codex (Responses API) provider profile."""
 
 from providers import register_provider

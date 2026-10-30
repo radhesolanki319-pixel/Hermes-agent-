@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Post-migration section-skip logic and the OpenClaw first-run migration flow (setup.py
 re-exports the names it still uses; setup helpers are imported lazily so test patches apply)."""
 

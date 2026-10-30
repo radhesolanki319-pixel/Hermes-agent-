@@ -1,3 +1,4 @@
+from __future__ import annotations
 """The paused gateways' tree gate for the update's checkout-writing steps (Windows pause, #132338).
 
 ``_checkout_move`` binds one git step (switch, merge, reset, upstream sync, rollback, stash, churn

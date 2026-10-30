@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Qwen Portal provider profile."""
 from typing import Any
 

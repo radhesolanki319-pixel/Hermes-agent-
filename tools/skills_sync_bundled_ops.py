@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bundled-skill maintenance ops: reset, diff, list-modified, opt-out, remove-pristine.
 Profile-scoped paths and patchable helpers resolve through ``_ss()`` at call time."""
 

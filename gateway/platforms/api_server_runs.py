@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Durable ``/v1/runs`` admission, status, events, and control handlers."""
 
 import asyncio

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real WS/session.create/disconnect/timers/RPC integration; offline model boundary.
 Usage: python evals/liveness/ws_orphan_reconnect.py REPO [redetach]
 Seeds a post-interrupt queued envelope to reproduce the bypass-writer schedule,

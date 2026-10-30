@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Human-readable rendering of ``ProcessRegistry.completion_queue`` events (completion,
 watch_match, watch_disabled, watch_overflow_*, async_delegation) into the
 ``[IMPORTANT: ...]`` / ``[ASYNC DELEGATION ...]`` text the CLI drain loop, gateway and

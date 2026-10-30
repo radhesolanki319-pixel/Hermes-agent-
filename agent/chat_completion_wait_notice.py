@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Operator-facing wait notice for long provider silences (#92550).
 
 The 30s heartbeat is gateway liveness, not a warning. Once a request has been

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Vercel AI Gateway provider profile: attribution headers + reasoning passthrough."""
 
 from typing import Any

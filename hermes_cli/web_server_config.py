@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard config schema and model-assignment logic: CONFIG_SCHEMA construction, dynamic provider options, web<->config normalisation, main/aux model assignment.
 """
 

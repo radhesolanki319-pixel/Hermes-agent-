@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hermes-owned PYTHONPATH stripping for child processes. Launchers prepend the repo
 root and the Hermes venv's site-packages so the backend can ``import tools``; leaked
 into a child Python of a DIFFERENT version they load the backend's C extensions and

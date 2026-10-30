@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Standalone per-platform senders and error helpers for send_message."""
 
 from pm import install_hint

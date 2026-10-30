@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Checkpoint store retention, orphan pruning, status and cleanup."""
 
 import logging

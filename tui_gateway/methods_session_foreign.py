@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Desktop foreign-history browsing, scoped to the serving backend and profile."""
 
 from .method_ctx import HandlerRegistry, bind_module

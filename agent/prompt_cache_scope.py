@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Rotation-stable logical cache scope for prompt_cache_key derivation.
 
 Legacy compression rotation mints a new physical ``session_id`` mid-conversation, moving it

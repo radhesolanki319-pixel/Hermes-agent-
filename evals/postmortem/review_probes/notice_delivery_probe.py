@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103549: interim notice must not claim/ack/dedup the batch's final result
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

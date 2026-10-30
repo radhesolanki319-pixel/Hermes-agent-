@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Result dataclasses and pure text helpers shared by ``tools.file_operations``
 and its search/lint mixins. Leaf module (imports nothing from ``tools`` at module
 scope) so nothing cycles. The ``to_dict`` output of every class here IS tool

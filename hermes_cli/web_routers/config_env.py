@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Config, env var and provider custom-endpoint dashboard routes.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

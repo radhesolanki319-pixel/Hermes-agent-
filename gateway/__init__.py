@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hermes Gateway - multi-platform messaging integration (sessions, context
 injection, delivery routing, platform-specific toolsets)."""
 

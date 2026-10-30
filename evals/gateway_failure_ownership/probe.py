@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os, sys, json, asyncio, threading, tempfile, sqlite3, socket, subprocess, tracemalloc, errno
 from pathlib import Path
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler

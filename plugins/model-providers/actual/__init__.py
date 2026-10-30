@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Actual Computer provider profile."""
 
 import os

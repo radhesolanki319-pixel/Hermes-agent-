@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Offline production-path wire probe; only loopback HTTP is permitted."""
 
 import os, sys, tempfile, json, socket, threading, copy

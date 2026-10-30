@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local HTTP contract probe; no vendor request or personal Hermes state.
 
 Run from the repository with its Python interpreter. JSON output identifies the

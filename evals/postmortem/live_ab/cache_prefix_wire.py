@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Definitive F0 test: capture consecutive wire payloads on a real Fable 5.1 tool loop and diff the
 message prefix between call N and N+1. If Hermes strips prior-turn thinking, call N+1's messages[:k]
 will NOT equal call N's messages (prefix divergence) even though the conversation only grew.

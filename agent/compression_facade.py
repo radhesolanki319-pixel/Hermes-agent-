@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Host-side ``AIAgent._compress_context`` wrapper.
 
 Publishes the commit fence ``hard_interrupt()`` reads, runs the compressor on a snapshot under the progress

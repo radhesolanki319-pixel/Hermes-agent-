@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Linux live cron race probe: real PID map, synchronized fork, owned-only cleanup.
 
 Run with the repository's Python and a disposable HERMES_HOME. No provider calls.

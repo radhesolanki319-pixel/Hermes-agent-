@@ -1,3 +1,4 @@
+from __future__ import annotations
 """SimpleX Chat adapter: persistent WebSocket to a simplex-chat daemon (``simplex-chat -p 5225``,
 or ``docker run -p 5225:5225 simplexchat/simplex-chat-cli -p 5225``); JSON commands out, events in.
 

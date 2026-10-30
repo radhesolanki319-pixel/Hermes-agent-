@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Telegram group addressing helpers, kept out of the adapter facade.
 
 The identity line lives in ``channel_prompt`` and therefore in the cached-agent signature: it

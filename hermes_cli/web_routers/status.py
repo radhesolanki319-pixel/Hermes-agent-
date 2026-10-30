@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Status dashboard routes: health, /api/status, system stats, curator, learning graph,
 portal and diagnostics actions.
 

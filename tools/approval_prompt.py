@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Human prompt surfaces for :mod:`tools.approval`.
 
 The interactive CLI prompt (callback panel or ``input()`` fallback) and the

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Provider reasoning-parameter policy for ``AIAgent``.
 
 When ``reasoning`` extra_body is safe to send, LM Studio / Ollama / GitHub Models capability probes,

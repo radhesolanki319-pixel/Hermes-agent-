@@ -1,3 +1,4 @@
+from __future__ import annotations
 """External secret source integrations.
 
 A secret source supplies env-var-shaped credentials at process startup, after

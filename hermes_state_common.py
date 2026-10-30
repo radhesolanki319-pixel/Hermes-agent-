@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared constants and helpers for the SessionDB family of modules.  Lives outside hermes_state so
 the mixin modules can import it without a cycle."""
 

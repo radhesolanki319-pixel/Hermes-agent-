@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Holographic Reduced Representations (HRR) with phase encoding. Each concept is a vector of angles in [0, 2π):
 bind = circular convolution (phase addition), unbind = circular correlation (phase subtraction), bundle =
 superposition (circular mean). Phase encoding avoids the magnitude collapse of complex-number HRRs and maps cleanly

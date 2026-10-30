@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Secret-capture prompt for the interactive CLI (``_secret_capture_callback`` backend)."""
 
 import queue

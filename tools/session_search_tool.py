@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Session Search Tool - long-term conversation recall over the SQLite session DB.
 

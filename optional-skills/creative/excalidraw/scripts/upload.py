@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 Upload an .excalidraw file to excalidraw.com and print a shareable URL.

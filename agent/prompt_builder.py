@@ -1,3 +1,4 @@
+from __future__ import annotations
 """System prompt assembly -- identity, platform hints, skills index, context files.
 
 All functions are stateless; AIAgent._build_system_prompt() combines the pieces

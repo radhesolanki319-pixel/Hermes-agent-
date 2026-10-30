@@ -1,3 +1,4 @@
+from __future__ import annotations
 """V4A patch parser/applier (codex, cline). ``*** Begin Patch``/``*** End Patch`` wrap ops:
 ``*** Update File: p`` + hunks (``@@ hint @@``, `` ctx``, ``-old``, ``+new``); ``*** Add File: n``
 + ``+`` lines; ``*** Delete File: o``; ``*** Move File: a -> b``. Entry points:

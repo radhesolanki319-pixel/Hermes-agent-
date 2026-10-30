@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Discord Voice Doctor — diagnostic tool for voice channel support.
 

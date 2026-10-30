@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Turn-local presentation of diagnostic-only wakes; execution and controls stay live."""
 from contextlib import contextmanager
 from contextvars import ContextVar

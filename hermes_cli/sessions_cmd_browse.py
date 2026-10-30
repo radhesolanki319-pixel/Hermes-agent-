@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interactive picker for ``hermes sessions browse``: curses UI with live search filtering and ``d``
 delete-with-confirmation; numbered-list fallback when curses is unavailable (Windows, etc.)."""
 

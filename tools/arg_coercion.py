@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Tool-argument type coercion: repair string-typed values the model emitted against a tool's JSON Schema.
 
 Models emit "42" for integers, "true" for booleans, JSON-encoded strings for

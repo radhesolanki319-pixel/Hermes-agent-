@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Running-process checkpoint persistence and PID-safe recovery."""
 
 import json

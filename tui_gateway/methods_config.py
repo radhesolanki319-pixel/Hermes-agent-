@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Config / projects / setup JSON-RPC handlers. Bodies are rebound onto server.py's globals
 (method_ctx.bind_module) and reference them bare. ``config.set`` lives in methods_config_set.
 """

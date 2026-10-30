@@ -1,3 +1,4 @@
+from __future__ import annotations
 """DeepInfra provider profile (chat surface; image-gen/TTS/STT are wired via
 their own plugin subsystems)."""
 

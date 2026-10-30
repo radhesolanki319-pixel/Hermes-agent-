@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lightweight skill metadata utilities shared by prompt_builder and skills_tool.
 Import-light by design: no tool registry, CLI config, or provider resolution."""
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Child-process environment for execute_code: env scrubbing, interpreter and cwd resolution.
 
 Both the per-call remote path and the local session kernel build their child

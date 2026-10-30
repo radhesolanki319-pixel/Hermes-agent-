@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Human-wait accounting for :mod:`tools.approval` (per session).
 
 Tracks wall-clock time the agent spends verifiably blocked on a HUMAN prompt

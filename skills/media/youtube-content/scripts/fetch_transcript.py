@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 Fetch a YouTube video transcript and output it as structured JSON.

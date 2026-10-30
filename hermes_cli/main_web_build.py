@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard build freshness/serialization and checkout bytecode sweep.
 
 Split out of ``hermes_cli/main.py``. Names that still live in main (``PROJECT_ROOT``, ...)

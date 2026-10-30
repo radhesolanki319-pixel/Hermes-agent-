@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Daytona cloud execution environment.
 
 Runs commands in Daytona cloud sandboxes via the Python SDK. Persistent mode stops

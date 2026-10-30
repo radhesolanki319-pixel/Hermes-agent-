@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Vertex AI (Google Cloud) auth + base-URL resolution for its OpenAI-compatible endpoint.
 
 Requires ``google-auth`` (lazy-installed). Secrets: GOOGLE_APPLICATION_CREDENTIALS /

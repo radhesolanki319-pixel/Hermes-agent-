@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``hermes gui --setup-tcc-identity``: a persistent self-signed macOS code-signing identity.
 
 Split out of ``hermes_cli/main_desktop.py``. The facade's build/sign helpers are imported lazily

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Independent durable writer used only by the loopback ownership probe."""
 import sys
 from pathlib import Path

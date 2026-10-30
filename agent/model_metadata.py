@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Model metadata, context lengths, and token estimation utilities.
 
 Pure utility functions with no AIAgent dependency. Used by ContextCompressor

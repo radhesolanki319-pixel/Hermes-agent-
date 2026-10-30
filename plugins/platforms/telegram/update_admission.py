@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Telegram admission before every PTB handler group, including native plugins.
 
 Claims belong to the receiving adapter across Application rebuilds. Completed

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Run the codex CLI as an eval arm on the same transcripts + question banks.
 

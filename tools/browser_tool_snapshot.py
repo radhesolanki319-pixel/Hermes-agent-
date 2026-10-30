@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Snapshot post-processing for the browser tools: truncate-and-store of oversized
 accessibility trees, model-boundary secret redaction, screenshot-path recovery.
 

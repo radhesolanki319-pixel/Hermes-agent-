@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Frozen updater surface: pre-PM updaters import these names from here.
 
 The implementation moved to ``pm.environments``; in-tree code imports it from there.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Request-local worker lifecycle, watchdog polling, and wait status."""
 
 from agent import chat_completion_helpers as h

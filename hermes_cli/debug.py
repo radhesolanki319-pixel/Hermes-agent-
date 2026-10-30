@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``hermes debug`` debug tools for Hermes Agent."""
 
 import contextlib

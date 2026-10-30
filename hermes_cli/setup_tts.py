@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Text-to-speech provider setup (provider picker, API-key prompts, local engine installs, xAI OAuth).
 setup.py names are resolved through the module object so test patches on ``hermes_cli.setup.<name>``
 take effect; setup.py re-exports the public entry points."""

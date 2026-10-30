@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Private run-document diagnostics, kept separate from delivery summaries."""
 
 from pathlib import Path

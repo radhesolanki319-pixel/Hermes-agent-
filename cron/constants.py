@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Fire-claim timing bounds shared by the job store and its siblings.
 
 Import-free on purpose: a sibling loaded fresh from a newer on-disk tree must resolve

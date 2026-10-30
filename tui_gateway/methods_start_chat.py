@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``session.start_chat``: the handoff card's Retry of a rejected start_chat call, and the next-turn note that tells
 the model about it.
 

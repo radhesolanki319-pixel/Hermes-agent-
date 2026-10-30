@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Nous Portal provider profile."""
 
 from typing import Any

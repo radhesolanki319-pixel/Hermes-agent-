@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Toolset / terminal-backend dashboard routes.
 
 The toolset/terminal catalogs and helpers stay in web_server (some are defined

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Render the repeated-compaction table from jev_cycles.py outputs.
 

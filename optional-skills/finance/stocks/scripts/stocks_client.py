@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 stocks_client.py - Stock market data CLI tool for the Hermes Agent project.

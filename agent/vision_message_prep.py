@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Image-part handling for ``AIAgent`` API messages.
 
 Vision capability probes, non-vision text fallbacks (cached ``vision_analyze`` descriptions), tool-result

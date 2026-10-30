@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Browser automation tools driven by the agent-browser CLI.
 

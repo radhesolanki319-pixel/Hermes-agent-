@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Run from the checkout: PYTHONPATH=. python evals/codex_echo/probe.py.
 
 Real subprocess pipes, protocol parser/projector, persistence and SQLite replay.

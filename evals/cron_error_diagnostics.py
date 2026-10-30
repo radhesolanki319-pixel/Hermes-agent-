@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local-I/O A/B for #104538; no inference, external APIs, or deliveries.
 
 Run with the project Python and pass a checkout to probe (defaults to this tree).

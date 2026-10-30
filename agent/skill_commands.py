@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared slash command helpers for skills (CLI and gateway both invoke /skill-name)."""
 
 import json

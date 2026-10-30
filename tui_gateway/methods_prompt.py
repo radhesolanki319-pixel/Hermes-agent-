@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Prompt / attachment / respond JSON-RPC handlers.
 
 Bodies are rebound onto server.py's globals at install time (see

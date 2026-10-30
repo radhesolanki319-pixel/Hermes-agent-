@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Exercise the actual XI2 helper on a PRIVATE Xvfb server, never the user's display.
 
 Usage: python3 hud-modifier-x11.test.py /path/to/hud-modifier-monitor

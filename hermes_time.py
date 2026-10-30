@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Timezone-aware clock for Hermes.
 
 ``now()`` returns a tz-aware datetime in the user's configured IANA timezone. Resolution order:

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """hermes claw — OpenClaw migration commands."""
 
 import contextlib

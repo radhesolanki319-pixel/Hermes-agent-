@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``AIAgent.run_conversation`` / ``chat`` façade.
 
 Turn admission around ``conversation_loop.run_conversation``: durable cross-process session turn lease +

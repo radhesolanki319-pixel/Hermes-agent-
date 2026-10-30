@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Modal cloud execution environment using the native Modal SDK directly
 (``Sandbox.create()`` + ``Sandbox.exec()``) with persistent snapshots across sessions."""
 

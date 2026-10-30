@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Discord server introspection and management tool (REST API + bot token).
 
 The model-visible schema is filtered by two gates: privileged intents from GET /applications/@me

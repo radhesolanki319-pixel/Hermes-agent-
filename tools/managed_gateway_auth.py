@@ -1,3 +1,4 @@
+from __future__ import annotations
 """First-party gateway bearer trust, ported from connectors-only 43608084f4."""
 
 import logging

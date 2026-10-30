@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Filesystem helpers shared across Hermes CLI subsystems."""
 
 import os

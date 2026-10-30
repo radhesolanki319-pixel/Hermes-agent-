@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Raw-YAML config and token/cost analytics dashboard routes.
 
 Extracted from ``hermes_cli.web_server``; app state and helpers are late-bound through

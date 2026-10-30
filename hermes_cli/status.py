@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Status command for hermes CLI."""
 
 import json

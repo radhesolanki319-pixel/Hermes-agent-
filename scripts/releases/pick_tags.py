@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Sample installed release baselines by creation time across version schemes."""
 import argparse
 import json

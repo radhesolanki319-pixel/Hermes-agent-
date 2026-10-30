@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Alibaba Cloud DashScope provider profiles (intl + CN, plus the Model Studio
 Token Plan flat-token tier with its own key/endpoints — one module per vendor).
 

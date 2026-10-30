@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Callback factories for bridging AIAgent events to ACP notifications.
 
 Each factory returns a callable with the signature AIAgent expects for its

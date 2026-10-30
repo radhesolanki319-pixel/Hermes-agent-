@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Background-process launch path: ``terminal(background=true)`` spawns a tracked
 process via the process registry (Popen locally, ``env.execute`` in a sandbox),
 stamps gateway routing metadata for completion / watch-pattern notifications and

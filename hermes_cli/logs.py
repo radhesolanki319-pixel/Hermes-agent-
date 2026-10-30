@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``hermes logs`` — view and filter Hermes log files.
 
 Supports tailing, following, session filtering, level filtering,

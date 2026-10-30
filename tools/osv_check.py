@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OSV malware check for MCP extension packages.
 
 Before launching an MCP server via npx/uvx, queries Google's free public OSV API for

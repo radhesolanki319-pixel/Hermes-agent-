@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Seam for the server.py handler/helper split. server.py's JSON-RPC handlers and helpers close
 over its module globals (``_sessions``, ``_ok``, ``_err``, ...). Split modules define their code
 normally and server.py calls :func:`bind_module` at the end of its own import, once every global

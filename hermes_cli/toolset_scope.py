@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Platform scope rules for configured toolsets."""
 
 from typing import Set

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Central registry for all hermes-agent tools: each tool file calls ``registry.register()``
 at import to declare schema, handler, toolset membership and availability check;
 ``model_tools.py`` queries the registry instead of keeping parallel data structures.

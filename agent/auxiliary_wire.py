@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Message hygiene at the resolved auxiliary client boundary."""
 
 from openai import AsyncOpenAI, OpenAI

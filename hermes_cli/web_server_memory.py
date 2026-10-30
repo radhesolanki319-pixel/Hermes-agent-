@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Memory-provider dashboard helpers: manifest/schema loading, setup-env and dependency probes, configured-status discovery.
 """
 

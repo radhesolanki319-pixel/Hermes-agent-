@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session Insights Engine: aggregates the SQLite state DB into usage insights (tokens, cost estimates, tool/skill
 usage, activity, model/platform breakdowns). ``InsightsEngine(db).generate(days=30)`` → ``format_terminal(report)``."""
 

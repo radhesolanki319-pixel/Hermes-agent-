@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real disposable user-systemd transaction, never a production gateway."""
 import json
 import os

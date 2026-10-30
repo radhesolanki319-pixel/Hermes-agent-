@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Terminal backend configuration: scope-aware TERMINAL_* reads, env-var parsing,
 container-cwd sanity checks, plugin-backend classification, and the ``_quiet``
 best-effort block shared by the terminal_tool_* modules.

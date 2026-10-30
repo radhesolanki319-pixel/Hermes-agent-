@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Fireworks AI provider profile. Models are addressed by full catalog ID
 (``accounts/fireworks/models/<slug>``), tracking fw-ai/fireconnect ``setup-cli``."""
 

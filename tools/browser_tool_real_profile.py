@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real-profile local browsing: snapshot the user's default Chromium profile into a
 hermes-owned copy, launch the real browser binary on it, and attach agent-browser.
 

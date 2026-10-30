@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Connection lifecycle tool for managed gateway accounts and local MCP servers.
 

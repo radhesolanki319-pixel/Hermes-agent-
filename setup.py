@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 setup.py — wheel/sdist build guard.
 

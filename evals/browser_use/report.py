@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Aggregate results.jsonl into the scorecard tables.
 
 Usage:

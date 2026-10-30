@@ -1,3 +1,4 @@
+from __future__ import annotations
 """agent-browser session management: daemon spawn, per-backend session creation
 (local/lightpanda/cdp/cloud), cached lookup, command execution + output interpretation.
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Builder-declared stable prefixes for Anthropic prompt caching.
 
 Skill/webhook/cron builders concatenate a large static scaffold with a small volatile

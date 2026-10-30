@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lightpanda local engine for Browser Use mode.
 
 With ``browser.engine: lightpanda``, Browser Use mode spawns one ``lightpanda serve`` per

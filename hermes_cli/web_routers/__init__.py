@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Extracted APIRouter modules for the dashboard web server.
 
 Each exposes ``router`` (profiles also ``sessions_router``), mounted by ``web_server`` at the

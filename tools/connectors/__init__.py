@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Connector integration boundary for managed gateway accounts and local MCP servers.
 
 Only the names below are cross-package surface; imports beyond it need a design decision.

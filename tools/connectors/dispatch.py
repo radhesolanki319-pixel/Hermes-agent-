@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Route connector calls through the normal dispatch policy pipeline."""
 
 import json

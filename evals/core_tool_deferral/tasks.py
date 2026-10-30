@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Task battery for PR #97979 core-tool-deferral A/B.
 
 Covers all 18 deferred tools:

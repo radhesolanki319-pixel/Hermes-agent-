@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Managed llama.cpp runtime.
 
 ``binaries`` answers which backend this machine uses and which PM-pinned

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared gateway restart constants and supervisor detection helpers."""
 
 import math

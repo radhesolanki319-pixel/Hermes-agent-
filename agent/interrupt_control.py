@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interrupt / steer / redirect control surface for ``AIAgent``.
 
 Soft/hard interrupt requests, tool-thread interrupt propagation, pending steer/redirect queues.

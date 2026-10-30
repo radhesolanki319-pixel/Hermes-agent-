@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard process-hygiene helpers — extracted from ``hermes_cli/main.py``.
 
 Helpers defined in ``hermes_cli.main_dashboard`` / ``hermes_cli.main_install_repair`` are imported at

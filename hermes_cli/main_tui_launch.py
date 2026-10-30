@@ -1,3 +1,4 @@
+from __future__ import annotations
 """TUI (ui-tui) launcher: prepared source builds and argv/env assembly.
 
 Split out of ``hermes_cli/main.py``. Names that still live in main (``PROJECT_ROOT``, ...)

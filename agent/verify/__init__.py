@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Project verification subsystem.
 
 Scoped port of superagent-ai/grok-cli's verify subsystem (``src/verify/recipes.ts``,

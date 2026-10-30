@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Text-to-speech tool: config resolution, built-in provider dispatch, output policy, registration.
 

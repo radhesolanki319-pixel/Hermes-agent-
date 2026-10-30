@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Read-only verification at the Windows Desktop handoff receipt boundary."""
 import json
 from pathlib import Path, PurePosixPath

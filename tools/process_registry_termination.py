@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Process-tree termination and post-kill survivor verification for ProcessRegistry."""
 
 import logging

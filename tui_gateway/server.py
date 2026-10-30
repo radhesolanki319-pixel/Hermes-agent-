@@ -1,3 +1,4 @@
+from __future__ import annotations
 # health: allow FILE_LINES -- security fix for #82010: distinguish an explicitly-empty toolset allowlist (fail closed, nothing allowed) from an absent one (no restriction); the added lines are minimal fail-closed branches at this existing chokepoint
 import atexit
 import concurrent.futures

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """WhatsApp platform adapter (Baileys bridge): a Node.js bridge process runs the WhatsApp Web
 client; messages are polled over a local HTTP API and responses are posted back through it."""
 

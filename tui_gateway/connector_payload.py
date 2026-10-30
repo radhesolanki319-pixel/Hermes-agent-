@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Connector UI payload redaction.
 
 Preserve authorization links while redacting credentials.

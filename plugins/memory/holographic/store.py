@@ -1,3 +1,4 @@
+from __future__ import annotations
 """SQLite-backed fact store with entity resolution and trust scoring (single-user Hermes memory plugin)."""
 
 import os

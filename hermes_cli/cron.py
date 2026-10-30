@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Cron subcommand for hermes CLI."""
 
 import contextlib

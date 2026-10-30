@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard OAuth/login-status helpers: provider catalog, per-provider device pollers,
 Anthropic/Copilot/Claude-Code status probes.
 """

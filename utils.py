@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared utility functions for hermes-agent."""
 
 import errno

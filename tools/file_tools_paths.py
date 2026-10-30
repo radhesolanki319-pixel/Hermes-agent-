@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Path resolution for the file tools: task-aware base dir, ``~`` expansion, workspace-divergence warning.
 
 Core invariant: the base directory anchoring relative paths is ALWAYS absolute

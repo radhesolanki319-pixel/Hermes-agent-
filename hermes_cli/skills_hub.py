@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Skills Hub CLI — Unified interface for the Hermes Skills Hub."""
 

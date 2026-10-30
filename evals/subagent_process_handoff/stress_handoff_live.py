@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live stress harness for PR #105125 (subagent background-process accounting) with a real orchestrator AND real
 children on one model. Each scenario: the parent is asked to delegate; the children do things with background
 processes; we read the runtime's own accounting (handed_off / orphaned / unread_completions) plus what the parent's

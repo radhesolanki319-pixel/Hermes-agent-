@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Distill a HAR file into an API summary an agent can turn into a client.
 

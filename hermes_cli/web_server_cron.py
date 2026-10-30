@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard cron helpers: per-profile scheduler I/O, job validation/normalisation, cron fire and
 gateway forwarding.
 """

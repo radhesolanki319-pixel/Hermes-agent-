@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway/process helpers for the dashboard: per-profile gateway topology (+cache), action
 subprocess spawning, gateway restart plumbing, system platform display.
 """
