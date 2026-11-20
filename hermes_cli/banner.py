@@ -1,5 +1,6 @@
 from __future__ import annotations
 """Welcome banner, ASCII art, skills summary, and update check for the CLI."""
+from __future__ import annotations
 import json
 import logging
 import os
@@ -624,7 +625,7 @@ def _banner_left_lines(model: str, cwd: str, session_id, context_length, provide
     lines = []
     pin = " (pinned)" if context_pinned else ""
     ctx_str = _dim_sep(f"{_format_context_length(context_length)} context{pin}") if context_length else ""
-    nous_str = _dim_sep("Nous Research")
+    gateway_str = _dim_sep("FreeLLM 158 SOTA")
     if not (model or "").strip():
         # Credentials resolve lazily on the first message; the banner prints first. Ask the route
         # the same question so a fresh free-tier install shows its model, not a red "unconfigured".
@@ -633,15 +634,17 @@ def _banner_left_lines(model: str, cwd: str, session_id, context_length, provide
         # MoA virtual provider: ``model`` is a preset name; show it with its aggregator.
         agg_label = _quiet(lambda: _moa_aggregator_label(model), "")
         agg_str = _dim_sep(f"agg {agg_label}") if agg_label else ""
-        lines.append(f"[{accent}]MoA: {_short_label(model)}[/]{agg_str}{ctx_str}{nous_str}")
+        lines.append(f"[{accent}]MoA: {_short_label(model)}[/]{agg_str}{ctx_str}{gateway_str}")
     elif not (model or "").strip() or (model or "").strip().lower() == "unknown":
         # Unconfigured install: the clearest place to say what is wrong and how to fix it.
         lines.append(f"[bold red]no model configured[/] [dim {dim}]— run /model or hermes setup[/]")
     else:
         model_short = model.split("/")[-1].removesuffix(".gguf")
-        lines.append(f"[{accent}]{_short_label(model_short)}[/]{ctx_str}{nous_str}")
+        lines.append(f"[{accent}]{_short_label(model_short)}[/]{ctx_str}{gateway_str}")
     if os.getenv("HERMES_YOLO_MODE"):
         lines.append(f"[bold red]⚠ YOLO mode[/] [dim {dim}]— all approval prompts bypassed[/]")
+    lines.append(f"[bold #00E5FF]Commander:[/] [{text}]Boss (Radhe Solanki)[/] [dim {dim}]· iQOO Neo 10 (Snapdragon 8 Gen 3)[/]")
+    lines.append(f"[bold green]Thermal Shield:[/] [dim {dim}]34°C-35°C Cool Running · Zero-Daemon Policy[/]")
     lines.append(f"[dim {dim}]{cwd}[/]")
     if session_id:
         lines.append(f"[dim {_skin_color('session_border', '#8B8682')}]Session: {session_id}[/]")

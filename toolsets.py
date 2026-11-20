@@ -39,6 +39,7 @@ _HERMES_CORE_TOOLS = [
     "manage_connections",
     # Android & Termux native hardware & automation tools
     "android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media", "android_display",
+    "android_notification", "android_toast", "android_tts", "android_wifi", "android_telephony", "android_system_status", "android_volume", "freellm_ai_query",
 ]
 
 # Webhook payloads are untrusted third-party content: no file/system execution.
@@ -129,8 +130,11 @@ TOOLSETS = {
     ),
     "tts": _ts("Text-to-speech: convert text to audio with Edge TTS (free), ElevenLabs, OpenAI, or xAI", ["text_to_speech"]),
     "android": _ts(
-        "Android and Termux hardware & automation tools (torch, battery, clipboard, vibrate, camera, media, display)",
-        ["android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media", "android_display"],
+        "Android & Termux hardware, automation, and AI tools (torch, battery, clipboard, vibrate, camera, media, display, notification, toast, tts, wifi, telephony, system_status, volume, freellm_ai)",
+        [
+            "android_torch", "android_battery", "android_clipboard", "android_vibrate", "android_camera", "android_media", "android_display",
+            "android_notification", "android_toast", "android_tts", "android_wifi", "android_telephony", "android_system_status", "android_volume", "freellm_ai_query",
+        ],
     ),
     "todo": _ts("Task planning and tracking for multi-step work", ["todo_list"]),
     "memory": _ts("Persistent memory across sessions (personal notes + user profile)", ["memory"]),

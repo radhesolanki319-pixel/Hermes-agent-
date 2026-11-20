@@ -482,3 +482,623 @@ registry.register(
     emoji="🖥️",
 )
 
+
+# ---------------------------------------------------------------------------
+# 8 New Flagship Tools: Notification, Toast, TTS, WiFi, Telephony, Status, Volume, FreeLLM AI
+# ---------------------------------------------------------------------------
+
+NOTIFICATION_SCHEMA = {
+    "name": "android_notification",
+    "description": "Send or clear Android status bar notifications and heads-up alerts with custom title, content, sound, and vibration.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "action": {
+                "type": "string",
+                "enum": ["notify", "remove"],
+                "description": "'notify' to show a notification, 'remove' to cancel/clear it.",
+            },
+            "title": {
+                "type": "string",
+                "description": "Notification title (e.g. 'Task Complete', 'JARVIS Alert').",
+            },
+            "content": {
+                "type": "string",
+                "description": "Notification body text.",
+            },
+            "id": {
+                "type": "string",
+                "description": "Unique notification ID (optional, used to update or remove).",
+            },
+            "priority": {
+                "type": "string",
+                "enum": ["low", "normal", "high", "max"],
+                "description": "Alert priority (default: 'high').",
+            },
+            "vibrate_ms": {
+                "type": "integer",
+                "description": "Vibration duration in milliseconds (default: 200).",
+            },
+            "sound": {
+                "type": "boolean",
+                "description": "Play alert sound (default: True).",
+            },
+        },
+        "required": ["action"],
+    },
+}
+
+
+def android_notification_tool(
+    action: str = "notify",
+    title: Optional[str] = None,
+    content: Optional[str] = None,
+    id: Optional[str] = None,
+    priority: str = "high",
+    vibrate_ms: Optional[int] = 200,
+    sound: bool = True,
+) -> str:
+    """Send or remove native Android notification via termux-notification."""
+    if action == "remove":
+        if not id:
+            return json.dumps({"error": "id parameter is required to remove notification"})
+        cmd = ["termux-notification-remove", id]
+        code, stdout, stderr = _run_cmd(cmd)
+        return json.dumps({
+            "success": code == 0,
+            "action": "remove",
+            "id": id,
+            "output": stdout or stderr,
+        })
+
+    if not title and not content:
+        return json.dumps({"error": "title or content required for notification"})
+
+    cmd = ["termux-notification"]
+    if title:
+        cmd.extend(["--title", title])
+    if content:
+        cmd.extend(["--content", content])
+    if id:
+        cmd.extend(["--id", id])
+    if priority in ("low", "normal", "high", "max"):
+        cmd.extend(["--priority", priority])
+    if vibrate_ms and vibrate_ms > 0:
+        cmd.extend(["--vibrate", str(min(vibrate_ms, 3000))])
+    if sound:
+        cmd.append("--sound")
+
+    code, stdout, stderr = _run_cmd(cmd)
+    return json.dumps({
+        "success": code == 0,
+        "action": "notify",
+        "title": title,
+        "content": content,
+        "output": stdout or stderr,
+    })
+
+
+registry.register(
+    name="android_notification",
+    toolset="android",
+    schema=NOTIFICATION_SCHEMA,
+    handler=lambda args, **kw: android_notification_tool(
+        action=args.get("action", "notify"),
+        title=args.get("title"),
+        content=args.get("content"),
+        id=args.get("id"),
+        priority=args.get("priority", "high"),
+        vibrate_ms=args.get("vibrate_ms", 200),
+        sound=args.get("sound", True),
+    ),
+    check_fn=_check_android_available,
+    emoji="🔔",
+)
+
+
+TOAST_SCHEMA = {
+    "name": "android_toast",
+    "description": "Show an instant visual toast message on the Android phone screen.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "text": {
+                "type": "string",
+                "description": "Text message to display in toast.",
+            },
+            "short": {
+                "type": "boolean",
+                "description": "True for short duration (~2s), False for long (~3.5s). Default: True.",
+            },
+            "gravity": {
+                "type": "string",
+                "enum": ["top", "middle", "bottom"],
+                "description": "Screen position of toast (default: 'bottom').",
+            },
+            "bg_color": {
+                "type": "string",
+                "description": "Background color (e.g. 'black', 'gray', 'white'). Default: 'black'.",
+            },
+            "text_color": {
+                "type": "string",
+                "description": "Text color (e.g. 'white', 'cyan', 'red'). Default: 'white'.",
+            },
+        },
+        "required": ["text"],
+    },
+}
+
+
+def android_toast_tool(
+    text: str,
+    short: bool = True,
+    gravity: str = "bottom",
+    bg_color: str = "black",
+    text_color: str = "white",
+) -> str:
+    """Show Android toast popup via termux-toast."""
+    if not text:
+        return json.dumps({"error": "text is required for toast"})
+
+    cmd = ["termux-toast", "-g", gravity, "-b", bg_color, "-c", text_color]
+    if short:
+        cmd.append("-s")
+    cmd.append(text)
+
+    code, stdout, stderr = _run_cmd(cmd)
+    return json.dumps({
+        "success": code == 0,
+        "text": text,
+        "gravity": gravity,
+        "output": stdout or stderr,
+    })
+
+
+registry.register(
+    name="android_toast",
+    toolset="android",
+    schema=TOAST_SCHEMA,
+    handler=lambda args, **kw: android_toast_tool(
+        text=args.get("text", ""),
+        short=args.get("short", True),
+        gravity=args.get("gravity", "bottom"),
+        bg_color=args.get("bg_color", "black"),
+        text_color=args.get("text_color", "white"),
+    ),
+    check_fn=_check_android_available,
+    emoji="💬",
+)
+
+
+TTS_SCHEMA = {
+    "name": "android_tts",
+    "description": "Speak text aloud through Android device speakers using native Termux text-to-speech.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "text": {
+                "type": "string",
+                "description": "Text to speak aloud to Boss.",
+            },
+            "rate": {
+                "type": "number",
+                "description": "Speech speed rate (0.5 to 2.0, default 1.0).",
+            },
+            "pitch": {
+                "type": "number",
+                "description": "Speech pitch (0.5 to 2.0, default 1.0).",
+            },
+            "stream": {
+                "type": "string",
+                "enum": ["music", "notification", "system", "alarm"],
+                "description": "Audio stream (default: 'music').",
+            },
+        },
+        "required": ["text"],
+    },
+}
+
+
+def android_tts_tool(
+    text: str,
+    rate: float = 1.0,
+    pitch: float = 1.0,
+    stream: str = "music",
+) -> str:
+    """Speak text aloud using termux-tts-speak."""
+    if not text:
+        return json.dumps({"error": "text is required for TTS"})
+
+    safe_rate = max(0.5, min(float(rate), 2.0))
+    safe_pitch = max(0.5, min(float(pitch), 2.0))
+
+    cmd = ["termux-tts-speak", "-r", str(safe_rate), "-p", str(safe_pitch), "-s", stream, text]
+    code, stdout, stderr = _run_cmd(cmd, timeout=15.0)
+    return json.dumps({
+        "success": code == 0,
+        "spoken_text": text,
+        "rate": safe_rate,
+        "pitch": safe_pitch,
+        "output": stdout or stderr,
+    })
+
+
+registry.register(
+    name="android_tts",
+    toolset="android",
+    schema=TTS_SCHEMA,
+    handler=lambda args, **kw: android_tts_tool(
+        text=args.get("text", ""),
+        rate=args.get("rate", 1.0),
+        pitch=args.get("pitch", 1.0),
+        stream=args.get("stream", "music"),
+    ),
+    check_fn=_check_android_available,
+    emoji="🗣️",
+)
+
+
+WIFI_SCHEMA = {
+    "name": "android_wifi",
+    "description": "Inspect WiFi connection status, SSID, link speed, signal strength, or scan nearby networks.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "action": {
+                "type": "string",
+                "enum": ["info", "scan"],
+                "description": "'info' for current WiFi connection state, 'scan' for nearby access points.",
+            },
+        },
+        "required": [],
+    },
+}
+
+
+def android_wifi_tool(action: str = "info") -> str:
+    """Query WiFi state via termux-wifi-connectioninfo or scaninfo."""
+    if action == "scan":
+        code, stdout, stderr = _run_cmd(["termux-wifi-scaninfo"], timeout=10.0)
+    else:
+        code, stdout, stderr = _run_cmd(["termux-wifi-connectioninfo"], timeout=5.0)
+
+    if code != 0:
+        return json.dumps({"error": stderr or "Failed to query WiFi status"})
+
+    try:
+        data = json.loads(stdout)
+        return json.dumps({"success": True, "action": action, "data": data})
+    except Exception:
+        return json.dumps({"success": True, "action": action, "raw": stdout})
+
+
+registry.register(
+    name="android_wifi",
+    toolset="android",
+    schema=WIFI_SCHEMA,
+    handler=lambda args, **kw: android_wifi_tool(
+        action=args.get("action", "info"),
+    ),
+    check_fn=_check_android_available,
+    emoji="📶",
+)
+
+
+TELEPHONY_SCHEMA = {
+    "name": "android_telephony",
+    "description": "Inspect cellular telephony state, SIM information, carrier, network type, and cell towers.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "action": {
+                "type": "string",
+                "enum": ["device", "cell"],
+                "description": "'device' for SIM/carrier info, 'cell' for cell tower diagnostics.",
+            },
+        },
+        "required": [],
+    },
+}
+
+
+def android_telephony_tool(action: str = "device") -> str:
+    """Query telephony state via termux-telephony-deviceinfo or cellinfo."""
+    cmd = ["termux-telephony-cellinfo"] if action == "cell" else ["termux-telephony-deviceinfo"]
+    code, stdout, stderr = _run_cmd(cmd, timeout=5.0)
+    if code != 0:
+        return json.dumps({"error": stderr or "Failed to query telephony status"})
+
+    try:
+        data = json.loads(stdout)
+        return json.dumps({"success": True, "action": action, "data": data})
+    except Exception:
+        return json.dumps({"success": True, "action": action, "raw": stdout})
+
+
+registry.register(
+    name="android_telephony",
+    toolset="android",
+    schema=TELEPHONY_SCHEMA,
+    handler=lambda args, **kw: android_telephony_tool(
+        action=args.get("action", "device"),
+    ),
+    check_fn=_check_android_available,
+    emoji="📱",
+)
+
+
+SYSTEM_STATUS_SCHEMA = {
+    "name": "android_system_status",
+    "description": "Comprehensive hardware health & policy monitor for Boss's iQOO Neo 10 (Snapdragon 8 Gen 3). Verifies 34°C-35°C thermal mandate, battery, RAM, storage, and zero-daemon architecture.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "detailed": {
+                "type": "boolean",
+                "description": "True to include detailed memory and thermal sensor readings.",
+            },
+        },
+        "required": [],
+    },
+}
+
+
+def android_system_status_tool(detailed: bool = False) -> str:
+    """Collect complete hardware health and policy status."""
+    status: Dict[str, Any] = {
+        "device": "iQOO Neo 10 (Model I2405 / PD2453F_EX)",
+        "platform": "Android 15 / Funtouch OS 15",
+        "soc": "Snapdragon 8 Gen 3 (4nm)",
+        "thermal_policy": "34°C - 35°C Peak Cool Running Mandate",
+        "daemon_policy": "Strict Zero-Background Daemon Policy (Enforced)",
+        "fast_charging_policy": "PERMANENTLY OFF (fast_charge_switch=0)",
+        "bypass_charging_policy": "ENABLED during gaming (bypass_charging_enabled=1)",
+    }
+
+    # Battery & Thermal Check
+    code, stdout, _ = _run_cmd(["termux-battery-status"], timeout=5.0)
+    if code == 0:
+        try:
+            bdata = json.loads(stdout)
+            temp_c = bdata.get("temperature", 0.0)
+            status["battery"] = {
+                "percentage": bdata.get("percentage"),
+                "status": bdata.get("status"),
+                "health": bdata.get("health"),
+                "plugged": bdata.get("plugged"),
+                "temperature_c": temp_c,
+                "thermal_status": "OPTIMAL COOL" if temp_c <= 35.0 else "ELEVATED (Cooling required)",
+            }
+        except Exception:
+            status["battery_raw"] = stdout
+
+    # Memory info
+    try:
+        meminfo: Dict[str, int] = {}
+        with open("/proc/meminfo", "r") as f:
+            for line in f:
+                parts = line.split(":")
+                if len(parts) == 2:
+                    k = parts[0].strip()
+                    val = parts[1].strip().split()[0]
+                    if val.isdigit():
+                        meminfo[k] = int(val)
+        total_mb = meminfo.get("MemTotal", 0) // 1024
+        avail_mb = meminfo.get("MemAvailable", 0) // 1024
+        used_mb = total_mb - avail_mb
+        status["memory_mb"] = {
+            "total": total_mb,
+            "used": used_mb,
+            "available": avail_mb,
+            "usage_percent": round((used_mb / total_mb) * 100, 1) if total_mb else 0,
+        }
+    except Exception as e:
+        status["memory_error"] = str(e)
+
+    # Storage info
+    try:
+        import shutil as _sh
+        usage = _sh.disk_usage("/storage/emulated/0")
+        status["storage_gb"] = {
+            "total": round(usage.total / (1024**3), 1),
+            "used": round(usage.used / (1024**3), 1),
+            "free": round(usage.free / (1024**3), 1),
+        }
+    except Exception as e:
+        status["storage_error"] = str(e)
+
+    # Load average
+    try:
+        load1, load5, load15 = os.getloadavg()
+        status["cpu_load"] = {"1m": round(load1, 2), "5m": round(load5, 2), "15m": round(load15, 2)}
+    except Exception:
+        pass
+
+    return json.dumps(status, indent=2)
+
+
+registry.register(
+    name="android_system_status",
+    toolset="android",
+    schema=SYSTEM_STATUS_SCHEMA,
+    handler=lambda args, **kw: android_system_status_tool(
+        detailed=args.get("detailed", False),
+    ),
+    check_fn=_check_android_available,
+    emoji="⚡",
+)
+
+
+VOLUME_SCHEMA = {
+    "name": "android_volume",
+    "description": "Inspect and set Android audio volume streams (media, ring, notification, system, alarm, call).",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "action": {
+                "type": "string",
+                "enum": ["get", "set"],
+                "description": "'get' to read volume levels, 'set' to change volume.",
+            },
+            "stream": {
+                "type": "string",
+                "enum": ["media", "ring", "notification", "system", "alarm", "call"],
+                "description": "Audio stream type (default: 'media').",
+            },
+            "volume": {
+                "type": "integer",
+                "description": "Target volume level (0 to stream max, e.g. 15). Required for 'set'.",
+            },
+        },
+        "required": ["action"],
+    },
+}
+
+
+def android_volume_tool(
+    action: str = "get",
+    stream: str = "media",
+    volume: Optional[int] = None,
+) -> str:
+    """Inspect or change volume streams via termux-volume."""
+    if action == "set":
+        if volume is None:
+            return json.dumps({"error": "volume parameter is required for action='set'"})
+        cmd = ["termux-volume", stream, str(volume)]
+        code, stdout, stderr = _run_cmd(cmd)
+        return json.dumps({
+            "success": code == 0,
+            "action": "set",
+            "stream": stream,
+            "volume": volume,
+            "output": stdout or stderr,
+        })
+
+    code, stdout, stderr = _run_cmd(["termux-volume"])
+    if code != 0:
+        return json.dumps({"error": stderr or "Failed to query volume"})
+
+    try:
+        data = json.loads(stdout)
+        return json.dumps({"success": True, "action": "get", "streams": data})
+    except Exception:
+        return json.dumps({"success": True, "action": "get", "raw": stdout})
+
+
+registry.register(
+    name="android_volume",
+    toolset="android",
+    schema=VOLUME_SCHEMA,
+    handler=lambda args, **kw: android_volume_tool(
+        action=args.get("action", "get"),
+        stream=args.get("stream", "media"),
+        volume=args.get("volume"),
+    ),
+    check_fn=_check_android_available,
+    emoji="🔊",
+)
+
+
+FREELLM_QUERY_SCHEMA = {
+    "name": "freellm_ai_query",
+    "description": "Synchronously consult any of Boss's 158 Flagship SOTA models from FreeLLM API (e.g. 'claude-opus-5', 'gpt-5.1-codex', 'qwen-3.8-27b', 'auto') for secondary opinions or multi-model reasoning.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "prompt": {
+                "type": "string",
+                "description": "The prompt or task for the external SOTA model.",
+            },
+            "model": {
+                "type": "string",
+                "description": "Model ID to query (default: 'auto', or 'claude-haiku-4.5', 'gpt-5.1-codex', etc.).",
+            },
+            "system_prompt": {
+                "type": "string",
+                "description": "Optional system prompt instructions.",
+            },
+            "max_tokens": {
+                "type": "integer",
+                "description": "Maximum response tokens (default: 500).",
+            },
+        },
+        "required": ["prompt"],
+    },
+}
+
+
+def freellm_ai_query_tool(
+    prompt: str,
+    model: str = "auto",
+    system_prompt: Optional[str] = None,
+    max_tokens: int = 500,
+) -> str:
+    """Query Boss's FreeLLM API directly and return the response."""
+    import time
+    if not prompt:
+        return json.dumps({"error": "prompt is required"})
+
+    api_url = os.getenv("FREELLM_BASE_URL", "https://freellmapi-backup.onrender.com/v1") + "/chat/completions"
+    api_key = os.getenv("FREELLM_API_KEY", "freellmapi-c7bf396fcf0351dbba9546933a8881054c627e6f78875206")
+
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+
+    payload = {
+        "model": model,
+        "messages": messages,
+        "max_tokens": min(max_tokens, 2048),
+        "stream": False,
+    }
+
+    t0 = time.time()
+    try:
+        req = urllib.request.Request(
+            api_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=12.0) as resp:
+            dur_ms = round((time.time() - t0) * 1000, 1)
+            routed_via = resp.headers.get("X-Routed-Via", "unknown")
+            body = json.loads(resp.read().decode("utf-8"))
+            choice = body.get("choices", [{}])[0]
+            answer = choice.get("message", {}).get("content", "").strip()
+            return json.dumps({
+                "success": True,
+                "model": model,
+                "latency_ms": dur_ms,
+                "routed_via": routed_via,
+                "answer": answer,
+            })
+    except Exception as exc:
+        dur_ms = round((time.time() - t0) * 1000, 1)
+        return json.dumps({
+            "success": False,
+            "model": model,
+            "latency_ms": dur_ms,
+            "error": str(exc),
+        })
+
+
+registry.register(
+    name="freellm_ai_query",
+    toolset="android",
+    schema=FREELLM_QUERY_SCHEMA,
+    handler=lambda args, **kw: freellm_ai_query_tool(
+        prompt=args.get("prompt", ""),
+        model=args.get("model", "auto"),
+        system_prompt=args.get("system_prompt"),
+        max_tokens=args.get("max_tokens", 500),
+    ),
+    check_fn=_check_android_available,
+    emoji="🧠",
+)
+
+

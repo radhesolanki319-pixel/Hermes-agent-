@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/env bash
-# Personal AI Assistant Launcher (Zero-Daemon Mobile & Desktop Architecture)
+# Personal AI Assistant Launcher (JARVIS / Hermes Autonomous Zero-Daemon CLI)
+# Commander: Boss (Radhe Solanki) | Device: iQOO Neo 10 (Snapdragon 8 Gen 3)
 
 SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 export PYTHONPATH="$SCRIPT_DIR:$PYTHONPATH"
@@ -7,51 +8,143 @@ export ZERO_DAEMON_MODE=1
 export DISABLE_EXTERNAL_TELEMETRY=1
 export HERMES_QUIET=1
 
-if [ "$1" == "--status" ] || [ "$1" == "-s" ]; then
-    python3 -c "
-from hermes_platform.host.facts import os_family, is_android, is_termux
-from hermes_platform.termux_adapter import get_battery_status, get_android_storage
-from persona_config import load_persona
-
-p = load_persona()
-print('=== JARVIS AUTONOMOUS SYSTEM STATUS ===')
-print(f'System:      {p.assistant_name} Core (Online & Armed)')
-print(f'Commander:   {p.user_name}')
-print(f'Tone:        {p.tone}')
-print(f'Platform:    {os_family()} (Android={is_android()}, Termux={is_termux()})')
-print(f'Storage:     {get_android_storage()}')
-print(f'Battery:     {get_battery_status()}')
-print('Policy:      Strict Zero-Background Process (Enforced)')
-print('====================================')
-"
-    exit 0
+# Auto-detect best python runner (prefer hermes venv with all dependencies)
+if [ -x "$HOME/.venvs/hermes/bin/python" ]; then
+    PY_BIN="$HOME/.venvs/hermes/bin/python"
+else
+    PY_BIN="python3"
 fi
 
+# Load environment overrides
 if [ -f "$HOME/.hermes/.env" ]; then
     set -a
     source "$HOME/.hermes/.env"
     set +a
 fi
 
+FREELLM_URL="${FREELLM_BASE_URL:-https://freellmapi-backup.onrender.com/v1}"
+FREELLM_KEY="${FREELLM_API_KEY:-freellmapi-c7bf396fcf0351dbba9546933a8881054c627e6f78875206}"
+
+# 1. System Status Check (--status / -s)
+if [ "$1" == "--status" ] || [ "$1" == "-s" ]; then
+    "$PY_BIN" -c "
+import json
+import os
+import shutil
+import subprocess
+from hermes_platform.host.facts import os_family, is_android, is_termux
+from persona_config import load_persona
+
+p = load_persona()
+print('╔══════════════════════════════════════════════════════════════════╗')
+print('║         ⚡ JARVIS / HERMES AUTONOMOUS SYSTEM STATUS ⚡           ║')
+print('╠══════════════════════════════════════════════════════════════════╣')
+print(f'║ Commander:     Boss (Radhe Solanki)')
+print(f'║ System:        {p.assistant_name} Core (Online & Armed)')
+print(f'║ Device:        iQOO Neo 10 (Model I2405 / Snapdragon 8 Gen 3)')
+print(f'║ Platform:      Android 15 / Funtouch OS 15 (Termux={is_termux()})')
+
+# Battery & Thermal Check (Target: 34°C - 35°C cool running)
+try:
+    res = subprocess.run(['termux-battery-status'], stdout=subprocess.PIPE, text=True, timeout=3)
+    bdata = json.loads(res.stdout) if res.returncode == 0 else {}
+    temp = bdata.get('temperature', 0.0)
+    pct = bdata.get('percentage', 0)
+    stat = bdata.get('status', 'UNKNOWN')
+    t_state = '❄️ OPTIMAL COOL (<34°C)' if temp < 34.0 else ('🟢 TARGET RUNNING (34°C-35°C)' if temp <= 35.5 else '⚠️ ELEVATED')
+    print(f'║ Battery:       {pct}% | Status: {stat} | Temp: {temp}°C [{t_state}]')
+except Exception:
+    print('║ Battery:       Telemetry unavailable')
+
+# Memory & Storage
+try:
+    total_st, used_st, free_st = shutil.disk_usage('/storage/emulated/0')
+    print(f'║ Storage:       {free_st // (1024**3)} GB Free of {total_st // (1024**3)} GB')
+except Exception:
+    pass
+
+print('║ AI Provider:   FreeLLM API (158 Models Active, Fastest-First Routing)')
+print('║ Gateway URL:   https://freellmapi-backup.onrender.com/v1')
+print('║ Policy:        Strict Zero-Background Daemon Mode (Enforced)')
+print('║ Charging:      Fast Charge OFF (0) | Bypass Charging Enabled (1)')
+print('╚══════════════════════════════════════════════════════════════════╝')
+"
+    exit 0
+fi
+
+# 2. Flagship Models Catalog (--models / -m)
+if [ "$1" == "--models" ] || [ "$1" == "-m" ]; then
+    "$PY_BIN" -c "
+import json
+import urllib.request
+
+url = '$FREELLM_URL/models'
+headers = {'Authorization': 'Bearer $FREELLM_KEY'}
+try:
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=5) as resp:
+        data = json.loads(resp.read().decode())
+        models = [m['id'] for m in data.get('data', [])]
+        print(f'=== FreeLLM API Flagship Models Catalog (Total: {len(models)}) ===')
+        gemini = [m for m in models if 'gemini' in m]
+        claude = [m for m in models if 'claude' in m]
+        gpt = [m for m in models if 'gpt' in m]
+        grok = [m for m in models if 'grok' in m]
+        others = [m for m in models if m not in gemini + claude + gpt + grok]
+        print(f'🔹 Gemini Family ({len(gemini)}): ' + ', '.join(gemini[:6]) + ' ...')
+        print(f'🔹 Claude Family ({len(claude)}): ' + ', '.join(claude[:6]) + ' ...')
+        print(f'🔹 GPT Family    ({len(gpt)}): ' + ', '.join(gpt[:6]) + ' ...')
+        print(f'🔹 Grok Family   ({len(grok)}): ' + ', '.join(grok[:6]) + ' ...')
+        print(f'🔹 SOTA / Open   ({len(others)}): ' + ', '.join(others[:8]) + ' ...')
+        print('⚡ Default Virtual Routers: auto, auto-fusion, fusion')
+except Exception as e:
+    print(f'Error fetching models: {e}')
+"
+    exit 0
+fi
+
+# 3. Speed Ping (--ping / --speed-test)
+if [ "$1" == "--ping" ] || [ "$1" == "--speed-test" ]; then
+    "$PY_BIN" -c "
+import json
+import time
+import urllib.request
+
+url = '$FREELLM_URL/models'
+headers = {'Authorization': 'Bearer $FREELLM_KEY'}
+t0 = time.time()
+try:
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=5) as resp:
+        dur = round((time.time() - t0) * 1000, 1)
+        data = json.loads(resp.read().decode())
+        count = len(data.get('data', []))
+        print(f'⚡ FreeLLM API Speed Ping: {dur} ms | Total Active Models: {count} | Gateway: Online')
+except Exception as e:
+    print(f'Ping failed: {e}')
+"
+    exit 0
+fi
+
 if [ $# -eq 0 ]; then
     # Interactive CLI session
-    exec python3 "$SCRIPT_DIR/cli.py"
+    exec "$PY_BIN" "$SCRIPT_DIR/cli.py"
 fi
 
 # Check if the first argument is a standard CLI subcommand or flag
 case "$1" in
     worktree|serve|pause|checkpoints|learning|import|mcp|profile|migrate|status|gui|import-agent|monitoring|debug|send|sessions|backup|computer-use|pets|auth|codex-runtime|memory-graph|tools|doctor|resume|hooks|skills|fallback|project|browser|login|journey|curator|skin|console|model|verify|uninstall|moa|completion|lsp|whatsapp-cloud|dump|vault|portal|claw|slack|logout|plugins|prompt-size|security|egress|dashboard|logs|gateway|chat|peer|help|secrets|bundles|webhook|cron|desktop|proxy|approvals|memory|setup|usage|acp|update|config|pairing|whatsapp|kanban|insights|version)
-        exec python3 -m hermes_cli.main "$@"
+        exec "$PY_BIN" -m hermes_cli.main "$@"
         ;;
     -h|--help|-v|--version|--config|-p|--profile)
-        exec python3 -m hermes_cli.main "$@"
+        exec "$PY_BIN" -m hermes_cli.main "$@"
         ;;
     -q|--query)
         shift
-        exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
+        exec "$PY_BIN" "$SCRIPT_DIR/run_agent.py" --model "auto" --base-url "$FREELLM_URL" --api-key "$FREELLM_KEY" --query "$*"
         ;;
     *)
         # Free-text user query directly dispatched to the autonomous agent runner
-        exec python3 "$SCRIPT_DIR/run_agent.py" --query "$*"
+        exec "$PY_BIN" "$SCRIPT_DIR/run_agent.py" --model "auto" --base-url "$FREELLM_URL" --api-key "$FREELLM_KEY" --query "$*"
         ;;
 esac

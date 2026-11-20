@@ -1,5 +1,5 @@
-from __future__ import annotations
 #!/usr/bin/env python3
+from __future__ import annotations
 """AIAgent: the tool-calling agent runner (conversation loop, tool execution, session lifecycle).
 
     from run_agent import AIAgent

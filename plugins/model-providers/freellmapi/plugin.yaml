@@ -1,0 +1,5 @@
+name: freellmapi-provider
+kind: model-provider
+version: 1.0.0
+description: FreeLLM API Unified Flagship SOTA AI Gateway (158 Models)
+author: Radhe Solanki (Boss)
