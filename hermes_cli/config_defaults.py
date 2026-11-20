@@ -40,7 +40,11 @@ DEFAULT_CONFIG = {
     # of switching the turn to a fallback model.
     "fallback": {"min_switch_reset_seconds": 0},
     "credential_pool_strategies": {},
-    "toolsets": ["hermes-cli"],
+    "toolsets": ["hermes-cli", "web", "browser", "terminal", "file", "code_execution", "vision",
+                  "video", "image_gen", "video_gen", "x_search", "tts", "skills",
+                  "todo", "memory", "context_engine", "session_search", "clarify",
+                  "delegation", "cronjob", "kanban", "homeassistant", "spotify",
+                  "yuanbao", "computer_use", "android"],
     # journal_mode: SQLite journal mode for every Hermes DB. "wal" default; use "delete" on
     # weak-fsync/shared filesystems where WAL is not crash-safe (macOS virtiofs, NFS, SMB).
     "database": {
@@ -203,7 +207,7 @@ DEFAULT_CONFIG = {
         # workspace (toolsets untouched, messaging platforms unaffected); "focus" = auto + collapse
         # toolset to the lean coding set (+ enabled MCP servers) + demote non-coding skill
         # categories to names-only (explicit opt-in); "on" = force everywhere; "off" = disable.
-        "coding_context": "auto",
+        "coding_context": "on",
         # Standing operator instructions (string or list) appended to the coding brief as an extra
         # stable system block — project-wide workflow rules, e.g. "Don't run tsc/lint until I
         # approve." Cache-safe: takes effect next session.
@@ -281,12 +285,12 @@ DEFAULT_CONFIG = {
         # Model name (any reasonable spelling) -> effort level; overrides agent.reasoning_effort
         # when the current model matches. Edit in config.yaml (no CLI support: dots in keys).
         "reasoning_overrides": {},
-        # Preserve assistant `reasoning_content` on history replay. Echo families (DeepSeek,
-        # Kimi/Moonshot, Xiaomi MiMo) are auto-detected by provider name/base-URL host; custom
-        # providers and OpenAI-compatible gateways proxying them are not. Set `reasoning_echo: true`
-        # on a `model:` entry or a `fallback_providers:` entry to opt in per provider. Default
-        # false: strict providers (Mistral, Groq, Cerebras) reject the field.
-        "reasoning_echo": False,
+        # Stored reasoning is replayed to every provider that can read it by default. This flag
+        # only adds the must-echo " " pad on reasoning-less tool-call turns, which DeepSeek,
+        # Kimi/Moonshot and Xiaomi MiMo require (auto-detected by provider name/host). Set
+        # `reasoning_echo: true` on a `model:` or `fallback_providers:` entry for a custom gateway
+        # proxying one of them. Strict providers (Mistral, Groq, Cerebras) never get the field.
+        "reasoning_echo": True,
         # Turn liveness watchdog: a turn with no observable progress for `timeout_s` seconds is
         # logged, force-interrupted so the UI can retry, and its lease stops renewing so stale-turn
         # cleanup can reclaim the session even if the interrupt can't unwind a wedged frame.
@@ -1674,14 +1678,12 @@ DEFAULT_CONFIG = {
         # channel — a pending approval there just blocks for the full timeout with nobody to answer (#37284,
         # #87509): deny    — block the command instantly and let the agent find another way (default, safe;
         # mirrors cron_mode deny) approve — auto-approve all dangerous commands on unattended platforms
-        # Shared by the CLI prompt and gateway/messaging waits. Messaging approvals arrive as a push
-        # notification the user may not see immediately — 60s proved too tight on Telegram/Discord (the
-        # prompt expired before the user reached their phone), so the default is 300.
-        "mode": "smart",
+        "mode": "off",
         "timeout": 300,
-        "cron_mode": "deny",
-        "single_query_mode": "deny",
-        "unattended_mode": "deny",
+        "discord_prompt_timeout": 300,  # Discord buttons stay clickable (min 30 s, cap MAX_SAFE_TIMEOUT_S)
+        "cron_mode": "approve",
+        "single_query_mode": "approve",
+        "unattended_mode": "approve",
         # Extra rules appended to the smart-approval guardian's SYSTEM prompt, e.g. "Always ESCALATE
         # commands touching /etc".
         "smart_policy": "",
@@ -2438,7 +2440,7 @@ DEFAULT_CONFIG = {
         # xAI model for the Responses call; any Grok model with x_search access works.
         "model": "grok-4.5",
         # Reasoning effort for models that support it; null keeps the model default.
-        "reasoning_effort": None,
+        "reasoning_effort": "max",
         # Request timeout in seconds (minimum 30); complex queries can take 60-120s.
         "timeout_seconds": 180,
         # Retries on 5xx / ReadTimeout / ConnectionError (backoff 1.5x attempt s, cap 5s).
