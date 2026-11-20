@@ -1,3 +1,4 @@
+from __future__ import annotations
 """File-mutation verification footers and turn-completion explanations for ``AIAgent``.
 
 The footer tells the model (and user) when a claimed file mutation did not land; the explainer

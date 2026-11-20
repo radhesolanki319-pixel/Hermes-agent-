@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Record a HAR file while driving a website with Playwright.
 

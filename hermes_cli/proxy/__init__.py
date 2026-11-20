@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local OpenAI-compatible proxy that forwards to OAuth-authenticated upstreams."""
 
 from hermes_cli.proxy.adapters.base import UpstreamAdapter

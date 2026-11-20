@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Telegram platform adapter (python-telegram-bot): inbound messages/media/commands, outbound replies."""
 
 import asyncio

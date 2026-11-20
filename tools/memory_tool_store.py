@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MemoryStore — bounded, file-backed curated memory (MEMORY.md / USER.md).
 Entries are joined by ``ENTRY_DELIMITER``; budgets are in chars (model-independent).
 Module state that tests monkeypatch (``get_memory_dir``, ``fcntl``/``msvcrt``) stays

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Anthropic Messages API transport: conversion via agent/anthropic_adapter.py, normalization here."""
 
 from typing import Any, Dict, List, Optional

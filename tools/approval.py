@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dangerous command approval -- the gate flow and per-session state.
 
 Owns the session state (approvals, yolo, gateway queues, denial breaker), the three guard

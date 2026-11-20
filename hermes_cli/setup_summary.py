@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Setup-completion summary (tool availability + "Setup Complete!" banner). setup.py names are
 resolved through the module object so test patches on ``hermes_cli.setup.<name>`` take effect."""
 

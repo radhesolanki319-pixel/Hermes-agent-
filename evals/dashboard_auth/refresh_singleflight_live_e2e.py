@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live E2E for #55712: real uvicorn, stub rotating IdP with reuse detection.
 
 Proves (a) N concurrent stale-RT requests on BOTH refresh paths rotate exactly once, and

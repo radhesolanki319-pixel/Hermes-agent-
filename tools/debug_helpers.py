@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared per-tool debug session: records tool calls to a JSON log when a
 tool-specific env var (e.g. WEB_TOOLS_DEBUG=true) is set; no-ops otherwise."""
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Arcee AI provider profile."""
 
 from providers import register_provider

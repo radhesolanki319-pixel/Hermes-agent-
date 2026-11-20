@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Official optional-skill provenance: hub-lock backfill and restore. Profile-scoped paths and
 patchable helpers resolve through ``_ss()`` at call time so ``tools.skills_sync`` patches work."""
 

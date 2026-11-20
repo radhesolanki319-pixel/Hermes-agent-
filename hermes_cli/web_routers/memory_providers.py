@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Memory-provider setup dashboard routes (schema, existing values, external dependency install).
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Delivery policy for engine diagnostics, never assistant or command responses."""
 
 from gateway.display_config import resolve_display_setting

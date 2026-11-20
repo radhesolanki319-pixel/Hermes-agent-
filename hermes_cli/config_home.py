@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Directory initialization and storage diagnostics for the active Hermes home."""
 
 import os

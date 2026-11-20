@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Completion / model-key / paste JSON-RPC handlers.
 
 Rebound onto server.py's globals at install time (``method_ctx.bind_module``), so

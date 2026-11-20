@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bot-relay JSON-RPC handlers — the gateway side of cross-connection A2A. Connections ARE the
 peer set: the Desktop owns every gateway socket and relays between them via four doors on EACH
 gateway: ``roster.sync`` (push OTHER connections' agents so ``message_agent`` resolves them),

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Generic web_search / web_extract tools over pluggable backends.
 

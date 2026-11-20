@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live judge A/B on the run's real "waiting" response shape. Usage: python judge_ab.py <repo_root> [n]"""
 import os, sys
 root = sys.argv[1]; n = int(sys.argv[2]) if len(sys.argv) > 2 else 3

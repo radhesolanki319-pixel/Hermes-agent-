@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Checkpoint Manager — Transparent filesystem snapshots via a single shared
 shadow git store.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Top-level argparse construction for the hermes CLI.
 
 Only the top-level parser and the ``chat`` subparser live here. Every other subparser (model,

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP client-side handlers for server-initiated requests: sampling
 (sampling/createMessage, text and tool-use results) and elicitation."""
 

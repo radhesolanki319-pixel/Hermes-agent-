@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Regex-based secret redaction for logs and tool output.
 
 Short tokens (< 18 chars) are fully masked; longer ones keep the first 6 and

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session listing/rich rows, export, and import (portability) for SessionDB.
 
 Plain mixin for ``hermes_state.SessionDB`` (no ``__init__``/state of its own).

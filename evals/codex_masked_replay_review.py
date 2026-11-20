@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local HTTP contract review of masked-error recovery; NOT live-provider proof.
 
 Run in an isolated HOME/HERMES_HOME under the campaign test lock. Responses are

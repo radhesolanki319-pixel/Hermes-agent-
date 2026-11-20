@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Upstage Solar provider profile: top-level ``reasoning_effort`` (low|medium|high).
 
 Solar's server default is ``minimal`` (reasoning off) — wrong for agentic work —

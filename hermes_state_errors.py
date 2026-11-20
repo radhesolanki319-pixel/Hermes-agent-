@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Exception types and error-classification predicates for the state store.
 Shared by hermes_state and its mixins; string predicates match wrapped RPC
 strings as well as live sqlite3 exceptions."""

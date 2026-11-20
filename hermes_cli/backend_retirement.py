@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Process-owned admission fence for cooperative Desktop backend retirement.
 
 The gate belongs to the process, not a profile or transport. Diagnostic ledgers alone cannot

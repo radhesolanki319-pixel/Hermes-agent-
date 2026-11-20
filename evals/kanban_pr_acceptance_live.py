@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local HTTP/lifecycle probe; no external GitHub writes or inference.
 Run: python evals/kanban_pr_acceptance_live.py ROOT
 """

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interrupt placeholder wording substituted into empty non-final wire rows.
 
 Split out of ``agent/agent_runtime_helpers.py`` (code-health size ratchet); a leaf module with no

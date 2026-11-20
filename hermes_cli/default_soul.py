@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Default SOUL.md template seeded into HERMES_HOME on first run."""
 
 # Kept identical to agent/prompt_builder.py's DEFAULT_AGENT_IDENTITY: _ensure_default_soul_md()

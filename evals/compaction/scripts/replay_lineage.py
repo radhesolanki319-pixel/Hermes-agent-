@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Replay a ~500K-token prefix of a reconstructed lineage through compaction.
 

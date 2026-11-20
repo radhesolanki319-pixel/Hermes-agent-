@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Skills Guard — regex static scan of externally-sourced skills plus a trust-aware install policy.
 

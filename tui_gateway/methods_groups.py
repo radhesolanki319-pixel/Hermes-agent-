@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hosted-room JSON-RPC contract: durable room identity, replay, and the process-owned
 same-gateway Discussion driver; ``groups.capabilities`` keeps that boundary machine-readable.
 

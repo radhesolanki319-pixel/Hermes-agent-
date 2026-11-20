@@ -1,3 +1,4 @@
+from __future__ import annotations
 """GitHub Copilot ACP provider profile.
 
 copilot-acp does not speak OpenAI-over-HTTP: it drives an external ACP subprocess over

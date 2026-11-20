@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Retry utilities — jittered backoff for decorrelated retries.
 
 Jittered delays (vs. fixed exponential) prevent thundering-herd retry spikes

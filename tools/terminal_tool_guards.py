@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pre-execution guards for the terminal tool.
 
 Pure functions that decide whether a command may run at all: workdir

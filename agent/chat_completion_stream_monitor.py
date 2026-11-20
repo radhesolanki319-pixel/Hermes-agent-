@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Display and heartbeat phase of the request-local streaming monitor."""
 
 import time

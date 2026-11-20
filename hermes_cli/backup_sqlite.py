@@ -1,3 +1,4 @@
+from __future__ import annotations
 """WAL-safe SQLite snapshots. Direct execution needs only the standard library.
 
 Desktop invokes this file before stopping its backend, even when application

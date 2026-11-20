@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Backend-local discovery and previews for the desktop session importer."""
 
 import hashlib

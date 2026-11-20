@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Content/file search tier for ``tools.file_operations``.
 
 ``ShellFileOperations`` inherits ``SearchMixin``; module-level helpers are pure

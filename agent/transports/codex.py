@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenAI Responses API (Codex) transport.
 
 Owns format conversion/normalization on top of agent/codex_responses_adapter.py —

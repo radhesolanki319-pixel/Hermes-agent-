@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Clarify tool: structured multiple-choice / open-ended questions to the user.
 Schema, validation and a thin dispatcher; the UI lives in a platform-provided
 callback (cli.py, gateway/run.py, tui_gateway)."""

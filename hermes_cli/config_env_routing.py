@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Which ``hermes config`` keys live in ``.env`` instead of ``config.yaml``, and their lifecycle.
 
 Platform setting keys such as ``FEISHU_HOME_CHANNEL`` had two writers: the platform setup flows and

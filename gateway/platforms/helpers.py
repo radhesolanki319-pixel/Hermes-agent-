@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared helpers for gateway platform adapters: message dedup, markdown
 stripping, thread participation tracking, GFM table → bullets, mention-pattern
 compilation, and fence-aware markdown chunking."""

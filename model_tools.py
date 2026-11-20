@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Thin orchestration layer over the tool registry.
 
 Importing runs tool discovery (each tools/*.py self-registers via

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """FTS5 index setup for SessionDB: the CJK-bigram (cjk_unicode61) index DDL and
 tokenizer loader, per-table schema ensure with tokenizer-capability fallback,
 FTS-scoped corruption detection and the atomic fail-open trigger detach."""

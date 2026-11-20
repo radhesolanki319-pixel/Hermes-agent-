@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pure-text helpers for voice mode: Whisper hallucination filter, voice-chat
 stop phrases, and the TTS self-echo guard. No audio dependencies."""
 

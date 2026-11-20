@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Write-side safety guards for write_file / patch.
 
 Every guard returns ``None`` when the write may proceed, else an error string

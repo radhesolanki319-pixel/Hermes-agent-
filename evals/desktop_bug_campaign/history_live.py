@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real serve/HTTP/WS history witness. No provider calls; seeded SQLite data."""
 import argparse
 import json

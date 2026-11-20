@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Interact with the in-app browser / preview pane in the Hermes desktop GUI (click, type, scroll).
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Microsoft Foundry provider profile: OpenAI-compatible, per-resource base URL
 supplied by the user at setup."""
 

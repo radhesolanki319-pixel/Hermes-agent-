@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Orchestrate the PR #97979 A/B battery. Resume-safe; per-run wall timeout.
 

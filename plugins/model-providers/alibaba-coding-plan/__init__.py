@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Alibaba Cloud Coding Plan provider profiles (intl + CN): a dedicated endpoint
 and key tier separate from ``alibaba``. Names match models.dev catalog keys.
 

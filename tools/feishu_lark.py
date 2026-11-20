@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared lark_oapi plumbing for the feishu_doc / feishu_drive tool modules.
 
 Holds the per-thread client handle, the cheap availability probe, and the generic

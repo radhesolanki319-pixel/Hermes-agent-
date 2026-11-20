@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Generic webhook platform adapter: aiohttp server that validates HMAC-signed POSTs (GitHub, GitLab,
 Svix, Linear, generic), renders payloads into agent prompts, and routes responses back (github_comment
 or any gateway platform). Routes live under platforms.webhook.extra.routes: events (header filter),

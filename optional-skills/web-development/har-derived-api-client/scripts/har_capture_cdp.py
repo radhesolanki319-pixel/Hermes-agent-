@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Capture a HAR from a browser you connect to over CDP (not one you launch).
 

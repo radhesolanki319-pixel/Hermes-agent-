@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Send Message Tool -- cross-channel messaging via platform APIs (send, list targets,
 react); works in both CLI and gateway contexts."""
 

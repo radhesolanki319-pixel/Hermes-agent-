@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Rate-limit / credits header capture and low-credit notices for ``AIAgent``.
 
 Parses provider response headers into ``_rate_limit_state`` / ``_credits_state`` and emits sticky notices.

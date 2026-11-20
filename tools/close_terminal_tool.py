@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Close a read-only agent terminal tab in the Hermes desktop GUI WITHOUT killing
 the mirrored ``terminal(background=true)`` process (output keeps buffering; the user
 can reopen it). Routes through the process registry's ``on_close`` sink, which the

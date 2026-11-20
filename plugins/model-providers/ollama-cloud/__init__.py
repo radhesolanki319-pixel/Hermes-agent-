@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Ollama Cloud provider profile.
 
 Top-level ``reasoning_effort`` on /v1/chat/completions accepts none|low|medium|

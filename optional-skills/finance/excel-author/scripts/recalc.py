@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Recalculate an .xlsx file's formulas using LibreOffice headless.
 

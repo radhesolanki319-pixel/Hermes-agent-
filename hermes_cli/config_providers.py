@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Custom-provider entry normalization and per-route lookups (TLS, headers, context length, capabilities).
 
 Split out of ``hermes_cli/config.py``; every name is re-imported there, so

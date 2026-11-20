@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Named RGB palettes for pixel_art() and pixel_art_video().
 
 Palette RGB values sourced from pixel-art-studio (MIT License)

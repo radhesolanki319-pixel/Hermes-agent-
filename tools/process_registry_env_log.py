@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Incremental sandbox log reads for ProcessRegistry's non-local poller."""
 
 

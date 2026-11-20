@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bash session-snapshot scripting for ``tools.environments.base``.
 
 Pure string builders: the CWD marker, the ``export -p`` dump that strips

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shims to suppress old updater work until relaunch. Live identity uses version_info."""
 
 

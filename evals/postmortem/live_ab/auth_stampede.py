@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live A/B of the Nous hourly-expiry stampede, no real network.
 
 Local server: accepts bearer FRESH, returns 401 {"type":"authentication_error", "Your API key is invalid,

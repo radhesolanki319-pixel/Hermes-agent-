@@ -1,3 +1,4 @@
+from __future__ import annotations
 """RoomLink room-member grants and capability HTTP handlers."""
 
 import time

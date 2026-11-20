@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Retired dependency hooks requested by already-running historical updaters."""
 from typing import NoReturn
 

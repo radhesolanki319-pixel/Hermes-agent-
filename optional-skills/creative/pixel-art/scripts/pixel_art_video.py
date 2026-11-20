@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pixel art video — overlay procedural animations onto a source image.
 
 Takes any image (typically pre-processed with pixel_art()) and overlays

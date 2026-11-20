@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub data models, path validators, and SKILL.md helpers. Leaf module (no imports from
 tools.skills_hub) so every source adapter module can import it at top level without cycles."""
 

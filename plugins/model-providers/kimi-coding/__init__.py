@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Kimi / Moonshot provider profiles (chat_completions path; sk-kimi-* keys are
 redirected to api.kimi.com/coding by core)."""
 

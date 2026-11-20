@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared platform registry for Hermes Agent."""
 
 from collections import OrderedDict

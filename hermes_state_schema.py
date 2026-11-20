@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Schema creation, column reconciliation, and FTS DDL management for SessionDB.
 
 Plain mixin for ``hermes_state.SessionDB`` (no ``__init__``/state of its own).

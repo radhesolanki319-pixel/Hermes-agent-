@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Native ACP stdio + SQLite probe; local HTTP model fixture, never paid inference.
 
 Run with the project Python from the checkout being measured. --output saves the

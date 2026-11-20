@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 evm_client.py — EVM blockchain CLI tool for the Hermes Agent project.

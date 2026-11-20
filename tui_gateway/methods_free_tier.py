@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Nous free-tier JSON-RPC handlers. ``free_tier.status`` answers from the
 auth store with zero network and zero side effects; ``free_tier.provision`` is the explicit retry when
 the boot bootstrap could not create the identity (desktop-only entry); ``free_tier.ack_notice``

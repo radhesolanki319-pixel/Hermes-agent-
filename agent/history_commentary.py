@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Display-only Codex commentary projection shared by REST and gateway history.
 
 Provider items and the stored reasoning string remain untouched for model replay.

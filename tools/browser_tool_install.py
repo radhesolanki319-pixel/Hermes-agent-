@@ -1,3 +1,4 @@
+from __future__ import annotations
 """PM-owned agent-browser / Chromium discovery, acquisition and readiness.
 
 Split out of ``tools/browser_tool.py``. Facade-owned state is read through ``_bt`` (``tools.browser_tool``, resolved per call) — no import cycle."""

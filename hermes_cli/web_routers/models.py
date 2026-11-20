@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Model assignment dashboard routes: model info/options/recommended default, auxiliary + MoA slots, /api/model/set.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

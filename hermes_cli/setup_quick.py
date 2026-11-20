@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Streamlined setup flows: the Nous Portal one-shot (`hermes portal`), first-time quick setup,
 Blank Slate setup and the `--quick` missing-items pass. Names from setup.py are imported lazily
 per function so test patches on ``hermes_cli.setup`` take effect."""

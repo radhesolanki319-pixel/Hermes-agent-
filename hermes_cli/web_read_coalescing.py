@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Coalesce concurrent synchronous HTTP reads before threadpool admission."""
 import asyncio
 import inspect

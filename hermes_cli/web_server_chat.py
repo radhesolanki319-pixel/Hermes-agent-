@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Chat/terminal WebSocket plumbing: PTY bridge selection and registry, WS
 client/origin/auth gates, chat argv resolution, gateway/sidecar URL building.
 """

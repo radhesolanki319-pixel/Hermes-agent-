@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live A/B for the nested-delegate deadline. A depth-1 orchestrator child dispatches one leaf that runs a
 ~460 s task (longer than the 420 s sequential deadline). On main the orchestrator's delegate_task call returns
 'timed out after 420.0s' and the leaf runs on as an orphan; on the branch the call blocks and returns the

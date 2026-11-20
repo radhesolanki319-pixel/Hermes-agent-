@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Validation for the ``platform_toolsets`` config section."""
 
 import ast

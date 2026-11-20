@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Trajectory Compressor — post-process agent trajectories into a token budget.
 

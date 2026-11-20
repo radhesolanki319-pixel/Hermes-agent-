@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Platform adapters for messaging integrations (receive, send, auth, media)."""
 
 from .base import BasePlatformAdapter, SendResult

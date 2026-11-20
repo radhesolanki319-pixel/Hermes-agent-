@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Source launch/update composition over the shared JavaScript builders."""
 
 import os

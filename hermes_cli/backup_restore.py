@@ -1,3 +1,4 @@
+from __future__ import annotations
 """SQLite-safe restore and archive-member publish plumbing for backups.
 
 Owns the restore side of ``hermes_cli.backup``: the page-copy SQLite restore

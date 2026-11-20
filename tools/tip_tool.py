@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Point at something in the Hermes desktop GUI and say one line about it — the quiet
 sibling of ``tour`` (same ``data-tour`` handles) with no scrim/spotlight/paging.
 Fire-and-forget: a tip is not a question, so blocking on a round-trip would stall the

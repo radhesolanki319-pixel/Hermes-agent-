@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Apply a layout preset in the Hermes desktop GUI (``layout.apply`` via ``desktop_ui``).
 
 The renderer resolves the id against its layouts registry (core, plugin and user

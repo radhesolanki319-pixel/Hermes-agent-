@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Persistent slash-command worker — one HermesCLI per TUI session.
 
 Protocol: reads JSON lines from stdin {id, command}, writes {id, ok, output|error} to stdout.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Sticker description cache for Telegram.
 
 Stickers are described via the vision tool once and cached by file_unique_id

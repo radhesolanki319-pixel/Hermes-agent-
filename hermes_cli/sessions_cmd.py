@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``hermes sessions`` command.
 
 ``cmd_sessions`` routes ``args.sessions_action`` through ``_PRE_DB_HANDLERS`` (repair / recover /

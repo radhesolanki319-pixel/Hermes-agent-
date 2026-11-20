@@ -1,3 +1,4 @@
+from __future__ import annotations
 """hermes webhook — manage dynamic webhook subscriptions from the CLI."""
 
 import hashlib

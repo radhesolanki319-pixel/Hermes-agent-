@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Auto-generate short session titles from the user's opening message.
 
 Two stages, both off the critical path: an **instant** deterministic title (written before the model

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Origin-module lookup shared by the ``tools.browser_tool_*`` extraction modules.
 
 Extracted code reads facade-owned state (caches, locks, session tables, facade-defined

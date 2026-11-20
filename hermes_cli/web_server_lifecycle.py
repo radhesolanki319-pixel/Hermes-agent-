@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Serve-process lifecycle: parent death watchdog, port-conflict preflight, READY announcement, browser open, trusted proxies.
 """
 

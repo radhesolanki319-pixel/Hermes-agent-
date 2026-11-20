@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Controlled filesystem fault; run only against the native disposable sandbox."""
 import json
 import os

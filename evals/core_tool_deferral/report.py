@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Aggregate A/B results. Usage: report.py [model_short ...]"""
 import json

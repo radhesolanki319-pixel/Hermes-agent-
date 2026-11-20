@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Durable manual-serve handoffs, independent of gateway restart receipts."""
 
 import json

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Context-aware side questions (``/btw``): answer a question ABOUT the conversation without
 touching it (no synthetic turns, no role-alternation risk, no prompt-cache invalidation).
 

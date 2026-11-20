@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shims to stop the old updater doing work until relaunch, not Android support."""
 
 from pathlib import Path

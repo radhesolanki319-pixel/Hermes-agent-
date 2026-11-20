@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Close the Hermes desktop GUI's preview pane, or one tab (``preview.close``).
 Registration lives in `desktop_preview`. The renderer drops the matching tab — or
 the whole pane when no url is given — only for the window that asked."""

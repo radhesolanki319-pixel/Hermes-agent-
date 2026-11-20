@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Streaming / interim-message delivery for ``AIAgent``.
 
 Single-writer stream ownership, delta/reasoning hook fan-out, and interim assistant text dedup.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Bot Desktop JSON-RPC handlers: the Desktop app's door to a profile's headless screen.
 
 ``display.status`` reports runtime + lease; ``display.start`` / ``display.stop`` manage the Xvnc/Xfce

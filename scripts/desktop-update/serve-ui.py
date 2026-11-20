@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Loopback shim server for the desktop update hand-off.
 
 Two GET routes: / serves ui.html, /progress serves the status file the

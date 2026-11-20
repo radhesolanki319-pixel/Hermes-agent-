@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Approval context: who is asking, from where, under which policy.
 
 Session identity and observability contextvars, the interactive/gateway/cron/

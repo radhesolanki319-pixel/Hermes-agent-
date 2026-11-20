@@ -1,3 +1,4 @@
+from __future__ import annotations
 """web_extract helpers: URL validation, provider resolution, cache-aware dispatch.
 
 Order of controls (each is a gate, never skipped by a cache hit): secret-URL

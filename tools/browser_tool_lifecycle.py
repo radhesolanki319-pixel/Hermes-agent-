@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Browser session lifecycle: inactivity janitor, orphan reaper, per-session teardown, atexit cleanup.
 
 Split out of ``tools/browser_tool.py``. Facade-owned state is read through ``_bt`` (``tools.browser_tool``, resolved per call) — no import cycle.

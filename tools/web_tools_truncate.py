@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Truncate-and-store pipeline for web_extract (no LLM).
 
 Pages at or under the char budget are returned whole; larger pages become a head+tail window plus a

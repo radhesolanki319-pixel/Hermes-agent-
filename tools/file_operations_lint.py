@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Syntax-lint and LSP-diagnostics tier for ``tools.file_operations``.
 
 ``ShellFileOperations`` inherits ``LintMixin``; module constants and in-process

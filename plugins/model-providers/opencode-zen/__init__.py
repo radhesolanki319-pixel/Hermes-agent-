@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenCode provider profiles (Zen + Go).
 
 Both route api_mode per model in core; these profiles carry the

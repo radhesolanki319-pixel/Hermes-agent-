@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub GitHub adapter: API auth, tap providers, and the Contents/Trees source."""
 
 import json

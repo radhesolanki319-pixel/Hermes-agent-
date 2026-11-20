@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Host-side RPC servers for execute_code sandboxes.
 
 Two transports share one request pipeline (token check → allow-list → call

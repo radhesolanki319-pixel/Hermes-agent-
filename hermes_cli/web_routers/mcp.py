@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP dashboard routes.
 
 The OAuth flow registry (``_mcp_oauth_flows``) and the worker/helpers stay in

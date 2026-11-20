@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Email platform adapter for the Hermes gateway: users talk to Hermes by sending email; IMAP (polled)
 receives, SMTP sends. Configured via EMAIL_* env vars or ``platforms.email`` in config.yaml (see website docs)."""
 

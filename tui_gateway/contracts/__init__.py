@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Wire contracts (see ``base.py``). Importing this package fills the registry tables; every topic
 module is listed here so the generator and the runtime see the same catalog."""
 

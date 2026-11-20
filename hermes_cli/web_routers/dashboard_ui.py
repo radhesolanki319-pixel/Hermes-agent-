@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Dashboard theme/font and dashboard-plugin (discovery, hub, install/enable, asset serving) routes.
 
 Extracted from ``hermes_cli.web_server``; helpers/state that tests monkeypatch on

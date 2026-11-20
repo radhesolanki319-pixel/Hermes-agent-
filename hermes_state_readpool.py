@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Read-connection budgeting for SessionDB's WAL read path: per-file and
 process-wide permit ceilings plus a descriptor-headroom gate, so N handles on
 one state.db cannot walk the process into EMFILE. Idle pooled connections keep

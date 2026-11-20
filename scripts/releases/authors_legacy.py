@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Frozen legacy commit-email → GitHub login mappings. Data only; never append.
 
 The contributor-check CI job and ``scripts/audit_pr_attribution.py`` grep this

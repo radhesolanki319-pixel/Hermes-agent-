@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Resource resolution: where a tool or application is, and what state it is in."""
 
 from hermes_platform.resolver.base import Effort, Inspection, Probe, Probeable, Resolver

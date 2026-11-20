@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Copilot / GitHub Models provider profile.
 
 Core routes GPT-5+/Codex -> codex_responses and Claude -> anthropic_messages;

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Process-handle plumbing for ``tools.environments.base``.
 
 Bounded output capture (head/tail window + disk spill), the ``ProcessHandle``

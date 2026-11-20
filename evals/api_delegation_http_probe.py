@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Loopback HTTP + real API executor/session bindings, with inference replaced.
 
 No paid model calls. Captures what the runtime hands the model, not provider behavior.

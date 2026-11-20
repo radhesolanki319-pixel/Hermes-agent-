@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103553: /goal re-paste vs option-selecting fragment
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

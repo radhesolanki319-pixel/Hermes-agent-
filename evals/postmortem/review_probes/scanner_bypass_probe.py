@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103492: a hardline command hidden after a NEWLINE inside a double-quoted $(grep …) must stay blocked
 by the public guard with no approval callback; a grep with a backtick operand must stay allowed.
 

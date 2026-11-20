@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Ramp Router (router.com) provider profile: Responses-only LLM gateway (verified live).
 
 ``api_mode="codex_responses"`` + the ``api.router.com`` host mandate in ``hermes_cli/providers.py``

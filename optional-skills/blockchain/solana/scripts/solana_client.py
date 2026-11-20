@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 Solana Blockchain CLI Tool for Hermes Agent

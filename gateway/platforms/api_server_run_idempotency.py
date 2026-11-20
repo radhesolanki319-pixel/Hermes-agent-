@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Durable idempotency reservations for API server runs."""
 
 import hmac

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real serve/WS profile-rebuild probe; deterministic loopback model, no vendor inference."""
 import argparse
 import json

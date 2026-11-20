@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Google Gemini (AI Studio) provider profile.
 
 Reports api_mode="chat_completions" but runs on GeminiNativeClient; this

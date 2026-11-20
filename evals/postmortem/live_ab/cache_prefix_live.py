@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live A/B for the thinking-strip cache miss (F0). Runs a short real tool loop through AIAgent on
 Fable 5.1 via Nous and prints per-call cache hit ratios from agent.log. ~10 calls, well under $1.
 Arm A = current code. Arm B = HERMES_KEEP_ALL_THINKING=1 monkeypatch of _manage_thinking_signatures

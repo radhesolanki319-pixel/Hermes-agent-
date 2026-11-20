@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live-agent tool-list maintenance after MCP (re)discovery: refreshing an
 AIAgent's tools/tool names, preserving the cached tools[] prefix across rebuilds,
 and re-injecting post-build tools."""

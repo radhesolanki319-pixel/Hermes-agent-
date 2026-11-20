@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Accounting at completion of an exact heartbeat admission attempt.
 
 Execution means entering the gateway's agent runner after turn preparation,

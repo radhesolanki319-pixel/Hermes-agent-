@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Carry the ACTIVE memory provider's own config into a ``--clone`` (#120115).
 
 ``--clone`` copies ``config.yaml`` — and with it ``memory.provider: hindsight`` — but the

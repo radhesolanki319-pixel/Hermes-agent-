@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared constants for Hermes Agent.
 
 Import-safe, stdlib-only — importable from anywhere without circular-import risk.

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103486: nested delegate deadline through actual dispatch
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

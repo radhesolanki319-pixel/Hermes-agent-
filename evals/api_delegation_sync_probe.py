@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Model-free API delegation delivery probe; run in an isolated HERMES_HOME.
 
 Uses real request-context binding, dispatch policy and SQLite persistence. This

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Reveal/focus a pane in the Hermes desktop GUI (``pane.reveal`` via ``desktop_ui``).
 

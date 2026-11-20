@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Update dependency diagnostics, historical markers and Windows launcher recovery."""
 
 import logging

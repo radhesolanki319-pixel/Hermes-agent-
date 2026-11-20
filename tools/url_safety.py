@@ -1,3 +1,4 @@
+from __future__ import annotations
 """URL safety checks — blocks requests to private/internal network addresses (SSRF).
 
 ``security.allow_private_urls: true`` disables private-IP blocking (DNS that resolves public

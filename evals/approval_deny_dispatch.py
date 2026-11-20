@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Offline production-dispatch receipt; never invokes a privileged binary.
 
 Run with the shared Python environment and a source tree argument to compare

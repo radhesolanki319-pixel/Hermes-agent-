@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live PTY auth controls with isolated homes and a loopback OAuth server.
 
 Usage: python evals/auth_pool_controls.py REPO OUTPUT_JSON

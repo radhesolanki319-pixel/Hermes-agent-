@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local execution environment — spawn-per-call with session snapshot."""
 
 import contextlib

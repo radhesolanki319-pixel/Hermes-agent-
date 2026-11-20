@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Profile JSON-RPC handlers — the ws twin of the dashboard's /api/profiles (desktop plugins
 only have the ws door), on the same `hermes_cli.profiles` primitives. Bodies are rebound onto
 server.py's globals (method_ctx.bind_module) and use them bare; module-level names are published

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Write/delete guards for ``skill_manage``. Every guard returns ``None`` when the
 operation may proceed, else a refusal (error dict or message). Origin-owned state
 (``_find_skill``, ``_skills_dir``) is reached lazily via ``tools.skill_manager_tool``

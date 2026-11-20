@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Meta Model API (Muse Spark) provider profile — https://api.meta.ai/v1.
 
 Bundled from albertodepaola/hermes-meta-provider; rides entirely on

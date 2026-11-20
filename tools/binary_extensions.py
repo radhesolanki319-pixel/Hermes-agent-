@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Binary file extensions to skip for text-based operations (ported from
 free-code src/constants/files.ts)."""
 

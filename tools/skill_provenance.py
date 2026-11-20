@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skill write-origin provenance: a ContextVar separating background-review skill writes from foreground
 user-directed writes (the curator only curates skills the self-improvement review fork created; skills a user
 asked for belong to the user). run_agent.py binds the origin before each tool loop, mirroring

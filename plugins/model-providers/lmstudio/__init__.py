@@ -1,3 +1,4 @@
+from __future__ import annotations
 """LM Studio provider profile (local desktop app with an OpenAI-compatible server).
 
 Request quirk: reasoning goes out as top-level ``reasoning_effort``, gated on and clamped to

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Run ONE (arm, model, task, rep) cell of the PR #97979 A/B in an isolated process.
 

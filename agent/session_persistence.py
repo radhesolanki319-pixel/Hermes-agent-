@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Durable transcript persistence for ``AIAgent`` (mixin; MRO-resolved from ``run_agent``): SQLite flush
 with intrinsic ``_DB_PERSISTED_MARKER`` dedup, ephemeral-scaffolding filtering, explicit
 trajectory export."""

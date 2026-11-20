@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Build a self-contained HTML report comparing compaction runs.
 

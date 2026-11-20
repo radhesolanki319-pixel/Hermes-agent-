@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Terminal-backend setup wizard (local/docker/singularity/modal/daytona/vercel/ssh/plugin).
 setup.py names are resolved through the module object so test patches on ``hermes_cli.setup.<name>``
 take effect; setup.py re-exports the public entry points."""

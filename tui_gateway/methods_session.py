@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session / delegation / spawn-tree / billing / pet JSON-RPC handlers.
 
 Bodies are rebound onto server.py's globals at install time (method_ctx.py), so they use server

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """NVIDIA NIM provider profile."""
 
 from typing import Any

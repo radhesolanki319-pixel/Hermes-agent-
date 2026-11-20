@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Endpoint-family detection for Anthropic-compatible base URLs.
 
 A dozen services speak the Anthropic Messages API but differ in auth style, accepted beta

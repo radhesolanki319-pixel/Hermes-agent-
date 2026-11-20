@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103496/#103534: judge process scoping and delegation WAIT lifecycle
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

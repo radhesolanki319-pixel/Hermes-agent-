@@ -1,3 +1,4 @@
+from __future__ import annotations
 """One-shot keyless-ring rescue for failed keyed/configured web calls.
 
 Stateless by design: a rescue routes THIS call through the free-tier ring (plugins/web/keyless_mcp.py);

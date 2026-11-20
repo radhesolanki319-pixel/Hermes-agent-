@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Wire-contract probe: real poller, SQLite, adapter lifecycle; fake model/transport.
 
 Run from the repo with a clean environment and a temporary HERMES_HOME:

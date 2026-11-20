@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session lifecycle mixin for SessionDB: row upsert/inheritance, lifecycle
 flags (end/reopen/archive/pin/hide/read), model_config patching, listing and
 counting, delete cascades, and the auto-archive sweep."""

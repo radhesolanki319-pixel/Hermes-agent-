@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real Linux venv/XDG I/O probe; help-launch is NOT a native UI proof."""
 import argparse
 import json

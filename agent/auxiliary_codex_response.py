@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Codex Responses → chat.completions normalization for auxiliary callers.
 
 Aux consumers speak Chat Completions, so a Responses result is mapped onto

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Base platform adapter interface; every platform adapter inherits from BasePlatformAdapter."""
 
 import asyncio

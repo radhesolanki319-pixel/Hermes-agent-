@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real offline completion producers -> durable SQLite rows; never run a model."""
 import asyncio
 import json

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Computer use toolset — universal (any-model) desktop control via cua-driver.
 
 Drives apps through cua-driver's background primitive (focus-without-raise + pid-scoped

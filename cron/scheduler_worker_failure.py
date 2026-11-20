@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Job-level visibility for a recovered, acknowledged worker death."""
 
 

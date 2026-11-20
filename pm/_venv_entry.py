@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Run code inside a venv on another interpreter: ``python -S _venv_entry.py SITE ARGS...``.
 
 ARGS are what would follow the venv interpreter's own options: ``SCRIPT [ARG...]``,

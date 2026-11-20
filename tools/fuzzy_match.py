@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Fuzzy find-and-replace for LLM-generated edits.
 

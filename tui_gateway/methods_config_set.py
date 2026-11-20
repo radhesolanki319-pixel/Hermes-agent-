@@ -1,3 +1,4 @@
+from __future__ import annotations
 """``config.set`` — one JSON-RPC method, dispatched on ``key`` through ``_CONFIG_SETTERS``. Bodies
 are rebound onto server.py's globals (method_ctx.bind_module) and reference them bare. Each
 ``_set_*`` takes ``(rid, params, key, value, session)`` and returns the JSON-RPC envelope.

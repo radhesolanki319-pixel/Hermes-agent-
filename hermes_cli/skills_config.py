@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills configuration for Hermes Agent. `hermes skills` enters this module."""
 from typing import List, Optional, Set
 

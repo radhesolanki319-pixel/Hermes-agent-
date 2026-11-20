@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Credential-vault JSON-RPC handlers — the Desktop's door to the local vault.
 
 The Desktop's Settings → Credential Vault panel manages the encrypted,

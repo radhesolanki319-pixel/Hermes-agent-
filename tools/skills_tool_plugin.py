@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Plugin-provided skill serving for ``skill_view`` (``plugin:skill`` names) plus the JSON /
 file-serving helpers shared with the local-skill path. Helpers tests patch on the origin module
 (``_is_skill_disabled``, ``_parse_frontmatter``, ``skill_matches_platform``) resolve lazily."""

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Transport bring-up for MCPServerTask: stdio spawn (OSV preflight, cached-npx swap, child PID
 ledger + death-supervisor registration), Streamable HTTP / SSE connect (preflight, identity header, client certs, OAuth),
 protocol negotiation and initial tool discovery. Split from tools/mcp_tool.py."""

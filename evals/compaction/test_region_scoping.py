@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Region-scoping tripwire: the summarizer must only see the compacted region.
 
 Builds a transcript with sentinel strings planted in (a) the protected head,

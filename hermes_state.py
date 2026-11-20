@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """SQLite state store for Hermes Agent: session metadata, message history, model
 config, FTS5 search. WAL mode (concurrent readers + one writer); compression

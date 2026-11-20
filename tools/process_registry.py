@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Process Registry -- in-memory registry for background processes spawned via
 terminal(background=true): rolling 200KB output buffer, poll/log/wait/kill, JSON
 checkpoint for crash recovery, session-scoped tracking for gateway reset protection.

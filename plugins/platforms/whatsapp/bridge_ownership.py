@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Non-destructive bridge allocation for multiplexed secondary profiles."""
 import socket
 from contextlib import suppress

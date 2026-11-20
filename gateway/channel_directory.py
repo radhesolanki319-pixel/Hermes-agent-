@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Channel directory -- cached map of reachable channels/contacts per platform.
 
 Built on gateway startup, refreshed every 5 min, saved to ``<HERMES_HOME>/channel_directory.json``.

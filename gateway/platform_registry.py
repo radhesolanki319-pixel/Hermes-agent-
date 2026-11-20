@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Platform adapter registry.
 
 Adapters (built-in and plugin) self-register here so the gateway can discover and

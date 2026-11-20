@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared CLI output helpers (``print_*`` + ``prompt()``) for the setup/config wizards."""
 
 import sys

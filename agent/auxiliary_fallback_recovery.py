@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Parameter-rejection recovery for auxiliary fallback candidates.
 
 The primary auxiliary request runs the full recovery ladder in ``auxiliary_client``; a fallback

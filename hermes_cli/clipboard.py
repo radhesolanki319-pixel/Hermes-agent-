@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Clipboard image extraction and text write for macOS, Windows, Linux, and WSL2.
 
 No Python deps — only OS-level CLI tools: macOS osascript (always present) / pngpaste (optional)

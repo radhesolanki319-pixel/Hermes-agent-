@@ -1,3 +1,4 @@
+from __future__ import annotations
 """CLI commands for the DM pairing system."""
 
 def pairing_command(args):

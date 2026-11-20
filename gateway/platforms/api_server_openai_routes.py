@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenAI-compatible routes for the API server adapter.
 
 ``OpenAICompatRoutesMixin`` (inherited by ``APIServerAdapter``) carries ``/v1/chat/completions``,

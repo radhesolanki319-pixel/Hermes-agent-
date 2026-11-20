@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Environment-variable overrides for the gateway config (``_apply_env_overrides``).
 
 Runs after ``GatewayConfig.from_dict`` so env always wins over config.yaml / gateway.json.

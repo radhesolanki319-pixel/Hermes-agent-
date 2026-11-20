@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Native Anthropic provider profile."""
 
 import json

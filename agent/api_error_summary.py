@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Provider API error summarising for ``AIAgent``.
 
 Entitlement-failure detection, xAI subscription decoration, structured-detail coercion, and log-safe

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Managed-files policy for the dashboard file browser: root resolution, path containment, entry metadata.
 """
 

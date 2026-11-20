@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session-DB access for the dashboard: per-profile SessionDB opening with schema
 heal, latest-descendant lookup and the auto-archive ticker.
 """

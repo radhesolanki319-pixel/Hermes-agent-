@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Cron job argument normalization, validation and result shaping (re-exported by
 tools/cronjob_tools.py)."""
 

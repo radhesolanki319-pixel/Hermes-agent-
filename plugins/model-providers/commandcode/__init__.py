@@ -1,3 +1,4 @@
+from __future__ import annotations
 """CommandCode provider profiles: ``commandcode`` (chat_completions) and
 ``commandcode-anthropic`` (anthropic_messages, Bearer auth — see
 ``agent/anthropic_adapter.py``). Same key and base URL for both."""

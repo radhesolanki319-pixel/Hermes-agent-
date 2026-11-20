@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Todo tool: in-memory, revisioned task list for multi-step work. State lives on the
 AIAgent (one per session), is re-injected after context compression, and every write bumps
 a monotonic revision so UI clients can reject stale updates. One ``todo_list`` tool: pass

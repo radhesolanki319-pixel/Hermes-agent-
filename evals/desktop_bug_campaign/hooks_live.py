@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Real serve + WebSocket + local HTTP inference fixture hook probe (no vendor calls)."""
 import argparse
 import json

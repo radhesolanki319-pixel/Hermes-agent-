@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Guided tour (highlight + narrate UI elements) in the Hermes desktop GUI: ``start`` with no
 steps runs the app's own built-in tour (``preset`` quick or full); for a custom one the agent
 discovers targets (``action="targets"``), then highlights one step at a time (``show``) or hands

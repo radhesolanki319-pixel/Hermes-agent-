@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103507: pytest plugin forcing the consumer-first schedule (-p finalizer_schedule_probe --finalizer-probe=consumer-first)
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared auxiliary client router for side tasks (compression, search, vision, ...).
 
 Text auto chain: main provider+model → OpenRouter → Nous Portal → custom endpoint →

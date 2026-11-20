@@ -1,3 +1,4 @@
+from __future__ import annotations
 """One benchmark cell: task x arm x model x rep.
 
 Usage:

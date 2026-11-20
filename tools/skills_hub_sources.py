@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Skills Hub adapters for well-known endpoints, direct URLs, LobeHub, and browse.sh."""
 
 import hashlib

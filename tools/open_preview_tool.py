@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Open a URL, dev server, or file in the Hermes desktop GUI's preview pane.
 

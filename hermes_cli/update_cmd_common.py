@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared leaf helpers for the ``hermes update`` modules (no Hermes imports; no cycle)."""
 
 import logging

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """skill_view repeat-view dedup registry: per-task cache of (skill name, file_path) ->
 (skill file mtime+size). A repeat view of an UNCHANGED file returns a short stub — the earlier
 tool result already carries the content verbatim. Cleared via ``reset_skill_view_dedup()`` on

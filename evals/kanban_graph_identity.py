@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Credential-free SQLite integration probe; run with --repo PATH."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor

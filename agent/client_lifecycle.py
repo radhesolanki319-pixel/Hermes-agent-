@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Tool-resource teardown, wire-client lifecycle and credential refresh for ``AIAgent``.
 
 ``ClientLifecycleMixin`` owns task cleanup, the shared primary client, per-request client caches

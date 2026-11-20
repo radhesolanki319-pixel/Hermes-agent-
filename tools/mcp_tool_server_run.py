@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lifecycle of :class:`tools.mcp_tool.MCPServerTask`: the long-lived ``run`` state machine
 (connect -> serve -> reconnect/park/recycle), keepalive-driven lifecycle waits, start/shutdown
 and tool deregistration. Origin state and patchable helpers are read through ``_core`` so

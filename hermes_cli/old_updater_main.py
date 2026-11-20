@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Frozen main.py imports for updater code still running after a checkout swap.
 
 These are not the live helpers in main_desktop, main_install_repair or

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Credential-free app-server/MCP scope probe; writes only its temporary board."""
 import json
 import os

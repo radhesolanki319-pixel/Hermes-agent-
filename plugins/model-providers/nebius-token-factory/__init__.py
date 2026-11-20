@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Nebius Token Factory provider profile."""
 
 from typing import Any

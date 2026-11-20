@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Provider setup wizard helpers: provider picker, custom-provider save/remove, auxiliary-model
 routing menu, API-key/reasoning prompts, Anthropic OAuth.
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Custom / Ollama (local) provider profile: any endpoint registered as
 provider="custom" (Ollama, vLLM, llama.cpp, GLM-5.2 on ARK, …)."""
 
@@ -69,16 +70,17 @@ class CustomProfile(ProviderProfile):
         # effort arrives here already filled by default_reasoning_config). Never emit
         # think=True (Ollama-only flag).
         if reasoning_config and isinstance(reasoning_config, dict):
+            base = str(ctx.get("base_url") or "")
+            if base_url_host_matches(base, "api.mistral.ai"):
+                return extra_body, top_level
             effort = (reasoning_config.get("effort") or "").strip().lower()
             if effort == "none" or reasoning_config.get("enabled", True) is False:
                 # See #14820.
                 top_level["reasoning_effort"] = "none"
                 if _looks_like_ollama_endpoint(ctx.get("base_url")):
                     extra_body["think"] = False
-            elif effort and base_url_host_matches(str(ctx.get("base_url") or ""), "api.groq.com"):
-                # Groq's OpenAI-compatible wire accepts top-level reasoning_effort only as
-                # "none" / "default"; any graded level ("medium", "high") 400s (#75089).
-                top_level["reasoning_effort"] = "default"
+            elif effort and base_url_host_matches(base, "api.groq.com"):
+                top_level["reasoning_effort"] = clamp_effort(effort, ("low", "medium", "high"))
             elif effort:
                 top_level["reasoning_effort"] = clamp_effort(effort, OPENAI_COMPAT_WIRE_EFFORTS)
         return extra_body, top_level

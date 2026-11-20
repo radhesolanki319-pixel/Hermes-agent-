@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway fleet restart + post-update verification for ``hermes update``.
 
 Split out of ``hermes_cli/update_cmd.py``; every name is re-imported there so

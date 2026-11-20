@@ -1,3 +1,4 @@
+from __future__ import annotations
 """browser_console(expression=...) policy: SSRF guard gating, private-URL probes,
 and the opt-in sensitive-primitive denylist.
 

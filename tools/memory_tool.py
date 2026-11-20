@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Memory Tool - persistent curated memory (MEMORY.md = agent notes, USER.md = user
 profile). Both enter the system prompt as a FROZEN snapshot at session start;

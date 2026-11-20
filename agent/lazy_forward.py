@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lazy forwarding helpers shared by the AIAgent façade and its mixins.
 
 Targets are resolved on every call, so ``patch("<module>.<name>")`` in tests still

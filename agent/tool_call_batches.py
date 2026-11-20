@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Normalize local bridge batches before persistence and per-tool execution."""
 
 from copy import deepcopy

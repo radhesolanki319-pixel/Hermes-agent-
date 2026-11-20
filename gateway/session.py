@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway session management: message sources, the persisted routing index (SessionStore),
 explicit resets and the dynamic "Current Session Context" system prompt section."""
 

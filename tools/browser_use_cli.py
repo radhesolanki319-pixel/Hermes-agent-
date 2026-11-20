@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Use the Browser Use CLI 3.0 (https://browser-use.com) for browser automation
 
 When browser.backend is "browser-use", the model gets ``browser_exec`` tool

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Live key_cmd catalog A/B: local authenticated HTTP, real helper, CLI PTY.
 

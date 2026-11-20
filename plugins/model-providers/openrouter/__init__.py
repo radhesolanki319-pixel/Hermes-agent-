@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenRouter provider profile."""
 
 import logging

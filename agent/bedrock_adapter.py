@@ -1,3 +1,4 @@
+from __future__ import annotations
 """AWS Bedrock Converse API adapter (boto3, optional dependency).
 
 Works without API keys via the AWS credential chain, cross-region inference profiles, guardrails and

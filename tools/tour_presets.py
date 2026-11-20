@@ -1,3 +1,4 @@
+from __future__ import annotations
 """The built-in tour presets ``gui_tour`` start-without-steps accepts.
 
 A leaf module with no ``registry.register``: the wire contract

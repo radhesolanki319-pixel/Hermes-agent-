@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP process lifecycle: stdio child PID tracking and orphan cleanup, graceful
 server shutdown and draining of the background MCP loop."""
 

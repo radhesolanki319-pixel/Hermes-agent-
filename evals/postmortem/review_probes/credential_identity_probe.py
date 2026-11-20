@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103526: explicit account-A key must not be replaced by the singleton's account-B key (real SDK -> loopback)
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Offline real-worktree prompt prefix probe (no provider requests).
 
 Run with the checkout's Python and PROBE_OUT pointing at a new empty directory.

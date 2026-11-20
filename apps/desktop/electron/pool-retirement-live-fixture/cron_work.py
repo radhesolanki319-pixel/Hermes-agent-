@@ -1,3 +1,4 @@
+from __future__ import annotations
 """A local-only script actually dispatched by Hermes' no-agent cron scheduler."""
 
 import json

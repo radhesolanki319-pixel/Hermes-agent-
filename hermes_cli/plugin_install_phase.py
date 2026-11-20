@@ -1,3 +1,4 @@
+from __future__ import annotations
 """The slow steps of a plugin install, as ids. A leaf module (stdlib only) so the gateway wire contract
 (``tui_gateway/contracts/connectors_operation.py``) can type them without importing the installer."""
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared path validation helpers for tool implementations (skills, cron, credential files)."""
 
 import re

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Keep an eval agent's host-level side effects inside the run's sandbox.
 
 HERMES_HOME isolation covers Hermes state only. Tasks like "schedule it nightly at 2am" let

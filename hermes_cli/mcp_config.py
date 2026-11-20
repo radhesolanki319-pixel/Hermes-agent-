@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP Server Management CLI — ``hermes mcp`` subcommand."""
 
 import asyncio

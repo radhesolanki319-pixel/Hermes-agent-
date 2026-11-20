@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Image generation via FAL.ai (model picked in ``hermes tools``, persisted to ``image_gen.model``).
 

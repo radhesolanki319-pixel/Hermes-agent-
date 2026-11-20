@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hermes Desktop (Chat GUI) uninstaller: removes only GUI state — built Electron artifacts, the packaged
 app, and the desktop's own ``userData`` — never agent source, venv, config, sessions or .env."""
 

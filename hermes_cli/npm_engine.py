@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Stop an already-running old updater before its retired npm retry path."""
 
 from typing import NoReturn

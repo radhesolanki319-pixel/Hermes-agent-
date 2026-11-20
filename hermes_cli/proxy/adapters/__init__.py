@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Upstream adapter registry for the local proxy server (see :class:`UpstreamAdapter`)."""
 
 from typing import Dict, Type

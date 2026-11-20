@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Job-definition schema shared by importers of a foreign cron store.
 
 Cron owns which persisted fields are *authored* (create_job) versus *advanced by the

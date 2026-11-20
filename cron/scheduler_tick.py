@@ -1,3 +1,4 @@
+from __future__ import annotations
 """In-process tick admission and dispatch; job execution stays in scheduler.py."""
 
 import concurrent.futures

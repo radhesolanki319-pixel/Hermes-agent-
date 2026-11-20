@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Project tools — the agent's INTENTIONAL handle on first-class Projects (per-profile
 ``projects.db``, the desktop sidebar's named workspaces). Creating/switching is an explicit

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Buzz platform adapter (Block's Nostr-based human+agent community relay).
 
 Outbound and polling go through the ``buzz`` CLI ("JSON in, JSON out", never a shell);

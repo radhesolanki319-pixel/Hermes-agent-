@@ -1,3 +1,4 @@
+from __future__ import annotations
 """MCP dashboard helpers: create-payload normalisation, env redaction/summary, dashboard-driven MCP OAuth worker.
 
 Wraps the same config layer the CLI uses (hermes_cli.mcp_config); stdio ``env``

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session mirroring for cross-platform message delivery.
 
 When a message is sent to a platform (send_message or cron delivery), append a

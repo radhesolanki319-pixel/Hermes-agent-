@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Skills Tool — list and view skill documents (progressive disclosure). A skill is a directory
 holding SKILL.md (YAML frontmatter + instructions) plus optional references/, templates/, assets/,

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """browser_vision helpers: Lightpanda pre-route, native provider vision, auxiliary-LLM screenshot analysis.
 
 Split out of ``tools/browser_tool.py``. Facade-owned state is read through ``_bt`` (``tools.browser_tool``, resolved per call) — no import cycle.

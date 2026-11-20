@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Smart approval: auxiliary-LLM risk assessment for :mod:`tools.approval`.
 
 The command text is untrusted — it originates from the primary LLM, which may

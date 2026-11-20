@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Secret-scrub policy for Hermes child processes: pure data + predicates for which env
 names are Hermes-managed credentials. The env *builders* applying it (``_make_run_env``,
 ``_sanitize_subprocess_env``, ``hermes_subprocess_env``) live in ``tools.environments.local``."""

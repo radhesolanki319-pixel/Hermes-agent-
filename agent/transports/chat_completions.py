@@ -1,3 +1,4 @@
+from __future__ import annotations
 """OpenAI Chat Completions transport (default api_mode for OpenAI-compatible providers).
 
 Messages/tools are already OpenAI-shaped, so convert_* are near-identity; the

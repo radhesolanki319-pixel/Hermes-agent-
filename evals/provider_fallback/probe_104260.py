@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Offline production-import reproduction: no repo edits or real credentials."""
 
 import os

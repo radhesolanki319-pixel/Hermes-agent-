@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Signal messenger platform adapter for a signal-cli daemon in HTTP mode (``signal-cli daemon
 --http 127.0.0.1:8080``): inbound via SSE, outbound via JSON-RPC 2.0. Requires SIGNAL_HTTP_URL
 and SIGNAL_ACCOUNT."""

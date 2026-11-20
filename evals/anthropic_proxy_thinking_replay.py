@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local wire-contract probe: which thinking blocks a real AIAgent replays to an
 Anthropic-compatible relay. Synthetic SSE fixtures; NOT live-provider proof.
 

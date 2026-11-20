@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Source import-integrity checks for update and stash restoration."""
 
 import json

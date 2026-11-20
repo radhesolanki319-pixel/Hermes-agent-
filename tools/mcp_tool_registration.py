@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Registering a connected (or schema-cached) MCP server's tools into the tool registry:
 include/exclude filtering, trust-tier metadata capture, utility-tool selection, name-collision
 resolution and the schema-cache write-through. Both entry points (``_register_server_tools``

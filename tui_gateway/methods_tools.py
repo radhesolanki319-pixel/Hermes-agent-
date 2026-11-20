@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Tools & system / slash / insights / rollback / plugins / cron / skills / MCP JSON-RPC handlers.
 
 Rebound onto server.py's globals at install time (``method_ctx.bind_module``), so

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Build a deck from a .pptx template (brand deck) and fill placeholders.
 

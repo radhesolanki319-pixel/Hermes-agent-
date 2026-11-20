@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Profile-scoped helpers: profile discovery fallback, profile dir/MCP-server writes,
 the profile/config scope context managers, skills-hub and tools/analytics catalog helpers.
 """

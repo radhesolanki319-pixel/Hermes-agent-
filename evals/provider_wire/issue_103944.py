@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Credential-free named-route reasoning parity probe over localhost SDK HTTP."""
 
 import json

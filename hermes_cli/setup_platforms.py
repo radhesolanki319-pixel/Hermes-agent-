@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Messaging-platform setup wizards (Telegram, BlueBubbles, webhooks) and the ``hermes setup
 gateway`` flow. setup.py re-exports the public names, and tests monkeypatch prompt/print/env
 helpers on hermes_cli.setup, so those are imported lazily per function."""

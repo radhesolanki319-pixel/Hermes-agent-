@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Linux live Git/OpenSSH PTY probe; fixture ssh config, no user state."""
 import json
 import os

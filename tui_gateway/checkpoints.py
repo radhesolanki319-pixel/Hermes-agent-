@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Checkpoint-enablement resolution for TUI-created agents (issue #79625).
 
 Desktop sessions (``hermes serve`` → TUI gateway) never set ``HERMES_TUI_CHECKPOINTS``

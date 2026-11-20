@@ -1,3 +1,4 @@
+from __future__ import annotations
 """#103513: child cap through repeated compression and persistence
 
 Independent-review probe (written by the /review subagent for tracking issue #103563, adapted here).

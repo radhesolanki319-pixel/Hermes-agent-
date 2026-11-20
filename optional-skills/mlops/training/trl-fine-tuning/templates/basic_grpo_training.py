@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Basic GRPO Training Template
 =============================

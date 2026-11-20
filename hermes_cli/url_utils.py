@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Small helpers for composing URLs from configured network hosts."""
 
 

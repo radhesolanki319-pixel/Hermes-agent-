@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Gateway runtime status helpers: PID/lock/marker files under ``{HERMES_HOME}`` (one set per
 home/profile) that tell whether the gateway daemon is running."""
 

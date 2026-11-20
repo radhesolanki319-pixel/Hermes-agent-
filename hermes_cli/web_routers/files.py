@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Managed-files, chat image upload, /api/media and /api/fs dashboard routes.
 
 Helpers/state that tests monkeypatch on ``web_server`` stay there and are

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """BlueBubbles iMessage platform adapter: local BlueBubbles macOS server for outbound REST sends and
 inbound webhooks (text, media attachments, typing indicators, read receipts)."""
 

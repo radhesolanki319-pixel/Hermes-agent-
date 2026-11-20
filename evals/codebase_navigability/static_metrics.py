@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Static code metrics for one tree. Usage: python static_metrics.py <tree> <label> -> writes <label>.static.json
 
 First-party Python only (excludes tests/, node_modules, apps/, website, build, .venv, skills md).

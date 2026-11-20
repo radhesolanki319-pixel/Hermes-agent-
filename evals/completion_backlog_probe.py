@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Local I/O probe for completion batching, not a hosted-model or native UI test.
 
 Run with the repo's Python: evals/completion_backlog_probe.py REPO OUTPUT.json.

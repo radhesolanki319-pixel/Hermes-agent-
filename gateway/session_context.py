@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Session-scoped context variables for the Hermes gateway.
 
 Replaces the old ``os.environ``-based ``HERMES_SESSION_*`` state with task-local ``ContextVar``s

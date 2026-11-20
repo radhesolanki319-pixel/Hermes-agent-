@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live process I/O proof, without model calls: python probe.py REPO OUT_DIR."""
 import json
 import os

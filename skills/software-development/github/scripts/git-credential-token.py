@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Print the first unambiguous GitHub token in a git credential-store file."""
 

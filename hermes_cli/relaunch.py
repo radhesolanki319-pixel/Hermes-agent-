@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Unified self-relaunch for Hermes CLI: preserves inherited flags (--tui, --dev, --profile, --model…)
 across process replacement so ``hermes sessions browse`` / post-setup relaunch keep the user's mode."""
 

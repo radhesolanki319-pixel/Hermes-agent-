@@ -1,3 +1,4 @@
+from __future__ import annotations
 """ZAI / GLM provider profile.
 
 GLM-4.5+ defaults to thinking ON, so ``reasoning_config`` is translated to

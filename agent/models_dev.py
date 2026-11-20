@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Models.dev registry integration — primary database for providers and models.
 
 Resolution: in-memory cache (fresh, or stale served while one background daemon

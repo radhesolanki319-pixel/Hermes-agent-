@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Zero-cost local SDK wire capture. Fixtures are not vendor inference evidence.
 
 Run from a checkout with HERMES_HOME pointing to a disposable directory.

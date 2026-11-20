@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os, sys, tempfile, pathlib, json, threading, time, socket
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Lightpanda engine status and the automatic Chrome fallback for browser commands
 that Lightpanda cannot serve (screenshots, empty snapshots, failed commands).
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Shared file sync manager for remote execution backends.
 
 Tracks local file changes via mtime+size, detects deletions, and syncs to

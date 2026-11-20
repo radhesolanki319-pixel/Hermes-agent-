@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Abstract base for provider transports.
 A transport owns one api_mode's data path (convert_messages -> convert_tools -> build_kwargs
 -> normalize_response), NOT client construction, streaming, credentials, caching, interrupts

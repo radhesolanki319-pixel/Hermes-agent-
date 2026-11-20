@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Pre-gate floors for :mod:`tools.approval`: decisions that never reach a prompt.
 
 Unconditional blocks (hardline, ``sudo -S`` password piping, the user's own

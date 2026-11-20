@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live: build a real child through delegate_tool's spawn path (real imports, temp HERMES_HOME) and read the
 trigger it resolves on a 1M-window model. Run against main and the branch."""
 import os, sys, tempfile, shutil

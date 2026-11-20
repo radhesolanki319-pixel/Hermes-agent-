@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Autostash handling for ``hermes update``: stash before the pull, restore/park/discard afterwards, warn about orphans.
 
 Split out of ``update_cmd.py``; names are re-imported there so ``hermes_cli.update_cmd.<name>`` still resolves/monkeypatches.

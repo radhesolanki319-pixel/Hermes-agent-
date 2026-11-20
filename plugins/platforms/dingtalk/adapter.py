@@ -1,3 +1,4 @@
+from __future__ import annotations
 """DingTalk platform adapter (Stream Mode via dingtalk-stream >=0.20; replies via session webhook markdown or AI Cards).
 Requires ``pip install "dingtalk-stream>=0.20" httpx``. config.yaml ``platforms.dingtalk``: ``enabled``, group gating
 (``require_mention``, ``free_response_chats``, ``mention_patterns``, ``allowed_users``/``allowed_chats``) and

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Live: detached delegate_task batch, one child fails immediately, siblings run ~8 s. Does the parent's
 completion queue see the per-task failure notice BEFORE the consolidated batch result?
 Usage: python notice_live.py <repo_root>"""

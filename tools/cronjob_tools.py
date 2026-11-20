@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Cron job management tool: one compressed action-oriented `cronjob_manage` tool
 (schema/context bloat avoided); `cronjob()` stays callable for direct Python callers."""
 

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Centralized resume-time guard for Kanban-owned sessions (#68779) — the ONE place that
 decides whether a Kanban worker transcript may resume as an ordinary session.
 

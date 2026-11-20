@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Per-task read/search bookkeeping for the file tools.
 
 Process-lifetime state behind read_file/search_files/write_file/patch.

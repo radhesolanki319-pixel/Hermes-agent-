@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Voice Mode -- push-to-talk recording and playback for the CLI.
 
 Capture via sounddevice, WAV via stdlib wave, STT via tools.transcription_tools,

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Agent emoji reaction in the Hermes desktop app: the counterpart to the user's tapback
 (same store, one-per-author, ``author="agent"``). Lives in the ``desktop_ui`` toolset so it

@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Hermes skin/theme engine — the theme SDK for every surface."""
 
 import logging

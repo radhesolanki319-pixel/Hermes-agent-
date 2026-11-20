@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Persistent element annotations in the Hermes desktop GUI's in-app browser.
 
 Unlike ``drive_preview``'s self-retiring marks, an annotation outlines an element

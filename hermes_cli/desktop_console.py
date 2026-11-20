@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Keep Windows console backpressure off the packaged desktop startup path."""
 
 import logging

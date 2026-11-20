@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Interrupt / steer / redirect session handlers (``methods_session`` split).
 
 Moved verbatim from ``tui_gateway/methods_session.py`` (file-line ratchet #68779): the

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """Batch Agent Runner — run the agent over a JSONL prompt dataset in parallel.
 

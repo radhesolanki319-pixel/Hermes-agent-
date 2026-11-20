@@ -1,3 +1,4 @@
+from __future__ import annotations
 """Full-text / trigram / CJK message search and FTS maintenance for SessionDB.
 
 Plain mixin for ``hermes_state.SessionDB`` (no ``__init__``/state of its own).
